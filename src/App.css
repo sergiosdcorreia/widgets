@@ -11,6 +11,21 @@
     width: 180px;
     max-width: 100%; }
 
+.footer {
+  background: #0d699c;
+  border-top: 6px solid #1189cb;
+  color: #fff;
+  font-family: sans-serif;
+  margin-top: 8px;
+  padding: 8px; }
+  .footer .fz-logo-white {
+    padding: 8px;
+    width: 180px;
+    max-width: 100%; }
+    .footer .fz-logo-white img {
+      width: 180px;
+      max-width: 100%; }
+
 .widget-lg {
   box-shadow: 0px 0px 10px rgba(81, 85, 65, 0.5);
   border: 1px solid transparent;
