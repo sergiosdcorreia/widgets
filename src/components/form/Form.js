@@ -46,7 +46,6 @@ class Form extends Component {
 
                     <p>Link</p>
                     <input type="url" name="link" id="link" value={link} onChange={this.onChangeLink}/>
-                    <input type="submit" value="Submit" id="add-widget"/>
                 </div>
             </div>
         )
