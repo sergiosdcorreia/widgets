@@ -56,13 +56,13 @@ render() {
     return (
 
             <div>
-                <div class="widget-sm">
-                    <a class="link" href={this.state.link}>
-                        <div class="fb">
-                            <div class="img--container">
+                <div className="widget-sm">
+                    <a className="link" href={this.state.link}>
+                        <div className="fb">
+                            <div className="img--container">
                                 <img src={ImageBlog} alt={this.state.title} />
                             </div>
-                            <div class="text--block">
+                            <div className="text--block">
                                 <p>{this.state.description}</p>
                             </div>
                         </div>

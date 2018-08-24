@@ -1,3 +1,4 @@
+@import '../../../styles/colors';
 
 .widget-lg {
     box-shadow: 0px 0px 10px rgba(81,85,65,.5);
@@ -35,7 +36,7 @@
             line-height: 32px;
             font-weight: 500;
             font-family: Arial, Helvetica, sans-serif;
-            color: #515554;
+            color: $color-black;
         }
     }
 }

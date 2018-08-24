@@ -54,14 +54,14 @@ class WidgetMedium extends Component {
         return (
 
             <div>
-                <div class="widget">
-                    <a class="link" href={this.state.link}>
-                        <div class="fb">
-                            <div class="img--container">
+                <div className="widget">
+                    <a className="link" href={this.state.link}>
+                        <div className="fb">
+                            <div className="img--container">
                                 <img src={ImageBlog} alt={this.state.title} />
                             </div>
-                            <div class="text-block">
-                                <h1 class="title">{this.state.title}</h1>
+                            <div className="text-block">
+                                <h1 className="title">{this.state.title}</h1>
                                 <p>{this.state.description}</p>
                             </div>
                         </div>

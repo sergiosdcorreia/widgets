@@ -1,12 +1,14 @@
+@import '../../styles/colors';
+
 .snippet {
 
-    background: #f4f4f4;
+    background: $color-off--white;
     padding: 1em;
     max-width: 500px;
     margin: 0 auto;
     
     .prettyprint {
-        color: #515554;
+        color: $color-black;
         
     }
 }

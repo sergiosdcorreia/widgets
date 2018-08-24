@@ -32,7 +32,7 @@ class Form extends Component {
         return (
 
             <div className="form">
-                <div class="container">
+                <div className="container">
                     <h2>Edit widget</h2>
 
                     <p>Widget title</p>

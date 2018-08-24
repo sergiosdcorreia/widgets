@@ -1,6 +1,8 @@
+@import '../../styles/colors';
+
 .header {
-    border-top: 2px solid #0d699c;
-    border-bottom: 2px solid #1189cb;
+    border-top: 2px solid $color-secondary--blue;
+    border-bottom: 2px solid $color-primary--blue;
     margin: 0 auto;
 }
 

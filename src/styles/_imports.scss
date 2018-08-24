@@ -1,8 +1,10 @@
 @import 'components/header/Header.scss';
 @import 'components/footer/Footer.scss';
 @import 'components/widgets/widgetLarge/WidgetLarge.scss';
+@import 'components/widgets/widgetMedium/WidgetMedium.scss';
+@import 'components/widgets/widgetSmall/WidgetSmall.scss';
 @import 'components/form/Form.scss';
-@import 'components/widgets/widgetLarge/snippet/Snippet.scss';
+@import 'components/snippet/Snippet.scss';
 
 //Partials
 @import 'styles/general';
