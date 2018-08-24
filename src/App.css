@@ -56,9 +56,63 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #515554; }
 
+.form {
+  padding: 8px;
+  margin: 32px auto;
+  border: 1px solid #515554;
+  border-left: 6px solid #515554;
+  border-radius: 6px;
+  width: 500px;
+  max-width: 100%; }
+  .form .widget-selector {
+    margin: 0;
+    padding: 0; }
+    .form .widget-selector li {
+      list-style: none;
+      padding: 0.5em 1em; }
+      .form .widget-selector li label {
+        padding: 0.25em; }
+  .form p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 8px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #515554; }
+  .form h2 {
+    margin-top: 0;
+    color: #515554; }
+  .form input {
+    border-radius: 3px;
+    border-color: #1189cb;
+    padding: 4px; }
+  .form textarea {
+    border-radius: 3px;
+    border-color: #1189cb;
+    padding: 4px; }
+  .form input[name="description"], .form input[name="image"], .form input[name="link"] {
+    color: #515554;
+    width: 50%; }
+
+.snippet {
+  background: #f4f4f4;
+  padding: 1em;
+  max-width: 500px;
+  margin: 0 auto; }
+  .snippet .prettyprint {
+    color: #515554; }
+
 .container {
   max-width: 960px;
   margin: 0 auto; }
 
 .App {
   font-family: Arial, Helvetica, sans-serif; }
+
+.container {
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto; }
+
+.heading-title {
+  color: #515554; }

@@ -1,9 +1,15 @@
-@import './styles/Imports.scss'; //imports all the styles
+@import './styles/imports.scss'; //imports all the styles
 
 .App {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
+.heading-title {
+  color: #515554;
 }

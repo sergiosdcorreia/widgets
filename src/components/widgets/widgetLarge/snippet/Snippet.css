@@ -1,0 +1,7 @@
+.snippet {
+  background: #f4f4f4;
+  padding: 1em;
+  max-width: 500px;
+  margin: 0 auto; }
+  .snippet .prettyprint {
+    color: #515554; }
