@@ -1,0 +1,37 @@
+.widget {
+    padding: 8px;
+    box-shadow: 0px 0px 10px rgba(81,85,65,.5);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    border-left: 6px solid #1189cb;
+    max-width: 500px;
+    transition: all .6s;
+    margin: 32px auto;
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+        width: 100px;
+        height: 100px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #515554;
+    }
+}
+
+.widget:hover {
+    box-shadow: 0px 0px 10px transparent;
+    border: 1px solid #1189cb;
+    border-left: 6px solid #1189cb;
+    transition: all .6s ease-in-out;
+}
+
+.fb {
+    display: flex;
+}
+
+.text-block {
+    padding-left: 16px;
+}

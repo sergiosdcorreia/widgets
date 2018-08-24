@@ -1,25 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Form = () => (
+class Form extends Component {
 
-    <div className="form">
-        <div class="container">
-            <h2>Edit widget</h2>
+    constructor(props) {
+        super(props);
+        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeImage = this.onChangeImage.bind(this);
+        this.onChangeLink = this.onChangeLink.bind(this);
+    }
 
-            <p>Widget title</p>
-            <input type="text" name="title" value="Article Title" id="title"/>
+    onChangeTitle(e) {
+        this.props.onTitleChange(e.target.value);
+    }
+    onChangeDescription(e) {
+        this.props.onDescriptionChange(e.target.value);
+    }
+    onChangeImage(e) {
+        this.props.onImageChange(e.target.value);
+    }
+    onChangeLink(e) {
+        this.props.onLinkChange(e.target.value);
+    }
 
-            <p>Description</p>
-            <textarea rows="3" cols="50" name="description" placeholder="This is the article description" value="Some description" id="description"></textarea>
+    render() {
+        const title = this.props.title;
+        const description = this.props.description;
+        const image = this.props.image;
+        const link = this.props.link;
 
-            <p>Image</p>
-            <input type="url" name="image" id="image" list="imagesList"/>
+        return (
 
-            <p>Link</p>
-            <input type="url" name="link" value="http://www.funeralzone.co.uk" id="link"/>
-            <input type="submit" value="Submit" id="add-widget"/>
-        </div>
-    </div>
-)
+            <div className="form">
+                <div class="container">
+                    <h2>Edit widget</h2>
+
+                    <p>Widget title</p>
+                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle}/>
+
+                    <p>Description</p>
+                    <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={this.onChangeDescription}></textarea>
+
+                    <p>Image</p>
+                    <input type="url" name="image" id="image" value={image} onChange={this.onChangeImage}/>
+
+                    <p>Link</p>
+                    <input type="url" name="link" id="link" value={link} onChange={this.onChangeLink}/>
+                    <input type="submit" value="Submit" id="add-widget"/>
+                </div>
+            </div>
+        )
+    }
+}
 
 export default Form;
