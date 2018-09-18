@@ -1,20 +1,47 @@
 @import '../../../styles/colors';
 
 .widget-sm {
-    max-width: 500px;
-    transition: all .6s;
+    max-width: 480px;
+    transition: all .4s;
     margin: 32px auto;
     background-color: $color-off--white;
+    box-shadow: 0 0 10px 0 rgba(81, 85, 84, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    outline: none;
+    margin-bottom: 2.25em;
+
+    .link {
+        text-decoration: none;
+        transition: all 0.4s;
+
+        &:hover {
+            box-shadow: 0 0 2px rgba(81, 85, 84, 0.5);
+            opacity: .75;
+        }
+
+        &:focus {
+            color: #fff;
+            background-color: #1189cb;
+            opacity: .75;
+        }
+    }
 
     .img--container {
-        width: 88px;
-        max-width: 88px;
-        height: 88px;
+        padding-bottom: 56.25%;
+        position: relative;
+        overflow: hidden;
+        height: 0;
 
         img {
-            width: 88px;
-            max-width: 88px;
-            height: 88px;
+            position: absolute;
+            height: auto;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            vertical-align: middle;
+            max-width: 100%;
         }
     }
 
@@ -23,10 +50,32 @@
     }
 
     .text--block {
-        padding: 8px;
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.46));
+        bottom: 0;
+        padding: 1rem 1rem 2rem;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        color: $color-white;
+        font-family: sans-serif;
 
-        p {
-            color: $color-black;
+        .title {
+            padding-left: 0;
+            line-height: 1.58;
+            font-weight: 600;
+            font-size: 19px;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            line-height: 30px;
+            margin: 0;
+        }
+
+        .description {
+            font-size: 14px;
+            font-weight: 300;
+            padding-top: 0;
+            line-height: 21px;
+            margin: 0;
         }
     }
 }

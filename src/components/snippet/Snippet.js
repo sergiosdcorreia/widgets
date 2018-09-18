@@ -6,14 +6,13 @@ const Snippet = (props) => (
     <div className="snippet">
         <pre className="prettyprint">
             {
-`<a class="link" href="${props.link}">
-    <div class="fb"> 
-        <div class="img--container">
-            <img scr="${props.image}">
+`<a class="c-card c-card--link block" href="${props.link}">
+    <div class="c-card__media c-card__media--16-9"> 
+        <img scr="${props.image}">
         </div>
-        <div class="text-block">
-            <h1 class="title">${props.title}</h1>
-            <p>${props.description}</p>
+        <div class="c-card__primary-title">
+            <div class="c-card__primary-title">${props.title}</div>
+            <div class="c-card__subhead-text">${props.description}</div>
         </div>
     </div>
 </a>`

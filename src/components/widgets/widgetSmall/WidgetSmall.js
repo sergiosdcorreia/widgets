@@ -1,89 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ImageBlog from '../../../Assets/images/blog-img01.jpg';
 import './WidgetSmall.css';
 
-import Form from '../../form/Form';
-import Snippet from '../../snippet/Snippet';
-
-class WidgetSmall extends Component {
-
-    constructor(props) {
-        super(props);
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-        this.handleImageChange = this.handleImageChange.bind(this);
-        this.handleLinkChange = this.handleLinkChange.bind(this);
-        this.state = {
-            title: "This is the title",
-            description: "This is the widget description",
-            image: ImageBlog,
-            link: "https://funeralzone-widgets.herokuapp.com/"
-        }
-    };
-
-    handleTitleChange(title) {
-        this.setState({
-            title: title
-        });
-    }
-
-    handleDescriptionChange(description) {
-        this.setState({
-            description: description
-        });
-    }
-
-    handleImageChange(image) {
-        this.setState({
-            image: image
-        });
-    }
-
-    handleLinkChange(link) {
-        this.setState({
-            link: link
-        });
-    }
-
-
-
-render() {
-    const title = this.state.title;
-    const description = this.state.description;
-    const image = this.state.image;
-    const link = this.state.link;
+const WidgetSmall = (props) => {
 
     return (
-
-            <div>
-                <div className="widget-sm">
-                    <a className="link" href={this.state.link}>
-                        <div className="fb">
-                            <div className="img--container">
-                                <img src={ImageBlog} alt={this.state.title} />
-                            </div>
-                            <div className="text--block">
-                                <p>{this.state.description}</p>
-                            </div>
+        <div>
+            <div className="widget-sm">
+                <a className="link" href={props.link}>
+                    <div className="img--container">
+                        <img src={ImageBlog} alt={props.title} />
+                        <div className="text--block">
+                            <p className="title">{props.title}</p>
+                            <p className="description">{props.description}</p>
                         </div>
-                    </a>
-                </div>
-
-                <Snippet
-                    title={title} onTitleChange={this.handleTitleChange}
-                    description={description} onDescriptionChange={this.handleDescriptionChange}
-                    link={link} onLinkChange={this.handleLinkChange}
-                    image={image} onImageChange={this.handleImageChange}
-                />
-                <Form 
-                    title={title} onTitleChange={this.handleTitleChange}
-                    description={description} onDescriptionChange={this.handleDescriptionChange}
-                    link={link} onLinkChange={this.handleLinkChange}
-                    image={image} onImageChange={this.handleImageChange}
-                />
+                    </div>
+                </a>
             </div>
-        )
-    };
+        </div>
+    )
 }
 
 export default WidgetSmall;
