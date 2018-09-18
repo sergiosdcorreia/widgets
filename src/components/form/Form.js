@@ -8,6 +8,7 @@ class Form extends Component {
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeImage = this.onChangeImage.bind(this);
         this.onChangeLink = this.onChangeLink.bind(this);
+        this.onChangeWidget = this.onChangeWidget.bind(this);
     }
 
     onChangeTitle(e) {
@@ -22,8 +23,12 @@ class Form extends Component {
     onChangeLink(e) {
         this.props.onLinkChange(e.target.value);
     }
+    onChangeWidget(e) {
+        this.props.onWidgetChange(e.target.value);
+    }
 
     render() {
+        const value = this.props.value;
         const title = this.props.title;
         const description = this.props.description;
         const image = this.props.image;
@@ -31,23 +36,29 @@ class Form extends Component {
 
         return (
 
-            <div className="form">
+            <form>
                 <div className="container">
                     <h2>Edit widget</h2>
 
-                    <p>Widget title</p>
-                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle}/>
+                    <label>Widget Small</label>
+                    <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={this.onChangeWidget} />
 
-                    <p>Description</p>
+                    <label>Widget Medium</label>
+                    <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={this.onChangeWidget} />
+
+                    <label>Widget title</label>
+                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle} />
+
+                    <label>Description</label>
                     <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={this.onChangeDescription}></textarea>
 
-                    <p>Image</p>
+                    <label>Image</label>
                     <input type="url" name="image" id="image" value={image} onChange={this.onChangeImage}/>
 
-                    <p>Link</p>
+                    <label>Link</label>
                     <input type="url" name="link" id="link" value={link} onChange={this.onChangeLink}/>
                 </div>
-            </div>
+            </form>
         )
     }
 }
