@@ -6,15 +6,13 @@ const WidgetMedium = (props) => {
 
     return (
         <div>
-            <div className="widget">
+            <div className="widget-sm">
                 <a className="link" href={props.link}>
-                    <div className="fb">
-                        <div className="img--container">
-                            <img src={ImageBlog} alt={props.title} />
-                        </div>
-                        <div className="text-block">
-                            <h1 className="title">{props.title}</h1>
-                            <p>{props.description}</p>
+                    <div className="img--container">
+                        <img src={ImageBlog} alt={props.title} />
+                        <div className="text--block">
+                            <p className="title">{props.title}</p>
+                            <p className="description">{props.description}</p>
                         </div>
                     </div>
                 </a>

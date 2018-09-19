@@ -35,40 +35,45 @@ class App extends Component {
                     description: "This is the data description for item 2",
                     link: "",
                     image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
+                },
+                {
+                    description: "This is the data description for item 3",
+                    link: "",
+                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
                 }
             ]
         }
     }
 
-handleTitleChange(title) {
-    this.setState({
-        title: title
-    });
-}
+    handleTitleChange(title) {
+        this.setState({
+            title: title
+        });
+    }
 
-handleDescriptionChange(description) {
-    this.setState({
-        description: description
-    });
-}
+    handleDescriptionChange(description) {
+        this.setState({
+            description: description
+        });
+    }
 
-handleImageChange(image) {
-    this.setState({
-        image: image
-    });
-}
+    handleImageChange(image) {
+        this.setState({
+            image: image
+        });
+    }
 
-handleLinkChange(link) {
-    this.setState({
-        link: link
-    });
-}
+    handleLinkChange(link) {
+        this.setState({
+            link: link
+        });
+    }
 
-handleWidgetChange(widget) {
-    this.setState({
-        widget: widget 
-    });
-}
+    handleWidgetChange(widget) {
+        this.setState({
+            widget: widget 
+        });
+    }
 
     render() {
         const title = this.state.title;
@@ -88,12 +93,18 @@ handleWidgetChange(widget) {
 
                 { widget === "widgetSmall"
                     ? <WidgetSmall title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
-                    : <WidgetMedium title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
+                    : null
                 }
 
-                <WidgetList
-                    widgetData={widgetData}
-                />
+                { widget === "widgetMedium"
+                    ? <WidgetMedium title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
+                    : null
+                }
+
+                { widget === "listWidget"
+                    ? <WidgetList widgetData={widgetData} />
+                    : null
+                }
 
                 <Form
                     value={widget} onWidgetChange={this.handleWidgetChange}

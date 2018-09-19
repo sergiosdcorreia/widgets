@@ -7,15 +7,18 @@ const WidgetSmall = (props) => {
     return (
         <div>
             <div className="widget-sm">
-                <a className="link" href={props.link}>
-                    <div className="img--container">
-                        <img src={ImageBlog} alt={props.title} />
-                        <div className="text--block">
-                            <p className="title">{props.title}</p>
-                            <p className="description">{props.description}</p>
-                        </div>
-                    </div>
-                </a>
+                <div className="img--container">
+                    <img src={ImageBlog} alt={props.title} />
+                </div>
+                <h1 className="title">{props.title}</h1>
+                <p className="subhead">Subhead text</p>
+                <ul className="description">
+                    <li>{props.description}</li>
+                </ul>
+                <div className="card__actions">
+                    <a href="">Read More</a>
+                </div>
+
             </div>
         </div>
     )
