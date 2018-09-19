@@ -46,6 +46,9 @@ class Form extends Component {
                     <label>Widget Medium</label>
                     <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={this.onChangeWidget} />
 
+                    <label>List Widget</label>
+                    <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={this.onChangeWidget} />
+
                     <label>Widget title</label>
                     <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle} />
 

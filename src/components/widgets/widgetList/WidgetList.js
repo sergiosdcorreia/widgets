@@ -1,87 +1,28 @@
-import React, { Component } from 'react';
-import ImageBlog from '../../../Assets/images/blog-img01.jpg';
+import React from 'react';
 import './WidgetList.css';
 
-import Form from '../../form/Form';
-import Snippet from '../../snippet/Snippet';
 import WidgetListItem from './widgetListItem/WidgetListItem';
 
-class WidgetList extends Component {
+const WidgetList = (props) => {
 
-    constructor(props) {
-        super(props);
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-        this.handleImageChange = this.handleImageChange.bind(this);
-        this.handleLinkChange = this.handleLinkChange.bind(this);
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.state = {
-            description: "This is the widget description",
-            image: ImageBlog,
-            link: "https://funeralzone-widgets.herokuapp.com/",
-            title: "Widget title"
-        }
-    };
-
-    handleDescriptionChange(description) {
-        this.setState({
-            description: description
-        });
-    }
-
-    handleImageChange(image) {
-        this.setState({
-            image: image
-        });
-    }
-
-    handleLinkChange(link) {
-        this.setState({
-            link: link
-        });
-    }
-
-    handleTitleChange(title) {
-        this.setState({
-            title: title
-        });
-    }
-
-    render() {
-
-        const description = this.state.description;
-        const image = this.state.image;
-        const link = this.state.link;
-        const title = this.state.title;
-
-        return (
-        <div>
-            <div className="widget-list">
-                <h1>{this.state.title}</h1>
-
-                <ul>
-                    <WidgetListItem
-                        description={description} onDescriptionChange={this.handleDescriptionChange}
-                        link={link} onLinkChange={this.handleLinkChange}
-                        image={image} onImageChange={this.handleImageChange}
-                    />
-                </ul>
-
-            </div>
-            <Snippet
-                description={description} onDescriptionChange={this.handleDescriptionChange}
-                link={link} onLinkChange={this.handleLinkChange}
-                image={image} onImageChange={this.handleImageChange}
-                title={title} onTitleChange={this.handleTitleChange}
+    const widgetData = props.widgetData;
+    const listWidget = widgetData.map((widgetData, key) => (
+            <WidgetListItem
+                key={key}
+                description={widgetData.description} onDescriptionChange={this.handleDescriptionChange}
+                link={widgetData.link} onLinkChange={this.handleLinkChange}
+                image={widgetData.image} onImageChange={this.handleImageChange}
             />
-            <Form
-                description={description} onDescriptionChange={this.handleDescriptionChange}
-                link={link} onLinkChange={this.handleLinkChange}
-                image={image} onImageChange={this.handleImageChange}
-                title={title} onTitleChange={this.handleTitleChange}
-            />
-        </div>
         )
-    };
+    );
+
+    return (
+        <div className="widgetList">
+            <ul>
+                {listWidget}
+            </ul>
+        </div>
+    )
 }
 
 export default WidgetList;

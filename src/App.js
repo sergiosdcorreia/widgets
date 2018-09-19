@@ -8,7 +8,7 @@ import Snippet from './components/snippet/Snippet';
 //import WidgetLarge from './components/widgets/widgetLarge/WidgetLarge';
 import WidgetMedium from './components/widgets/widgetMedium/WidgetMedium';
 import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
-//import WidgetList from './components/widgets/widgetList/WidgetList';
+import WidgetList from './components/widgets/widgetList/WidgetList';
 
 class App extends Component {
 
@@ -24,7 +24,19 @@ class App extends Component {
             title: "This is the widget title",
             description: "This is the widget description",
             image: "",
-            link: "https://funeralzone-widgets.herokuapp.com/"
+            link: "https://funeralzone-widgets.herokuapp.com/",
+            widgetData: [            
+                {
+                    description: "This is the data description for item 1",
+                    link: "",
+                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
+                },
+                {
+                    description: "This is the data description for item 2",
+                    link: "",
+                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
+                }
+            ]
         }
     }
 
@@ -64,6 +76,7 @@ handleWidgetChange(widget) {
         const image = this.state.image;
         const link = this.state.link;
         const widget = this.state.widget;
+        const widgetData = this.state.widgetData;
 
         return (
             <div className="App">
@@ -77,6 +90,10 @@ handleWidgetChange(widget) {
                     ? <WidgetSmall title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
                     : <WidgetMedium title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
                 }
+
+                <WidgetList
+                    widgetData={widgetData}
+                />
 
                 <Form
                     value={widget} onWidgetChange={this.handleWidgetChange}
