@@ -1,69 +1,86 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Form extends Component {
-
-    constructor(props) {
-        super(props);
-        this.onChangeTitle = this.onChangeTitle.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onChangeImage = this.onChangeImage.bind(this);
-        this.onChangeLink = this.onChangeLink.bind(this);
-        this.onChangeWidget = this.onChangeWidget.bind(this);
+const Form = (props) => {
+    let onChangeTitle = (e) => {
+        props.onTitleChange(e.target.value);
     }
-
-    onChangeTitle(e) {
-        this.props.onTitleChange(e.target.value);
+    let onChangeDescription = (e) => {
+        props.onDescriptionChange(e.target.value);
     }
-    onChangeDescription(e) {
-        this.props.onDescriptionChange(e.target.value);
+    let onChangeImage = (e) => {
+        props.onImageChange(e.target.value);
     }
-    onChangeImage(e) {
-        this.props.onImageChange(e.target.value);
+    let onChangeLink = (e) => {
+        props.onLinkChange(e.target.value);
     }
-    onChangeLink(e) {
-        this.props.onLinkChange(e.target.value);
-    }
-    onChangeWidget(e) {
-        this.props.onWidgetChange(e.target.value);
+    let onChangeWidget = (e) => {
+        props.onWidgetChange(e.target.value);
     }
 
-    render() {
-        const value = this.props.value;
-        const title = this.props.title;
-        const description = this.props.description;
-        const image = this.props.image;
-        const link = this.props.link;
+    let createWidgetForm = (title, value, description, image, link) => {
+
+        console.log("form");
 
         return (
+            <div>
+                <label>Widget title</label>
+                <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
 
-            <form>
-                <div className="container">
-                    <h2>Edit widget</h2>
+                <label>Description</label>
+                <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription}></textarea>
 
-                    <label>Widget Small</label>
-                    <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={this.onChangeWidget} />
+                <label>Image</label>
+                <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={onChangeImage} />
 
-                    <label>Widget</label>
-                    <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={this.onChangeWidget} />
-
-                    <label>List Widget</label>
-                    <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={this.onChangeWidget} />
-
-                    <label>Widget title</label>
-                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle} required />
-
-                    <label>Description</label>
-                    <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={this.onChangeDescription} required></textarea>
-
-                    <label>Image</label>
-                    <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={this.onChangeImage} required/>
-
-                    <label>Link</label>
-                    <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={this.onChangeLink} required/>
-                </div>
-            </form>
+                <label>Link</label>
+                <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={onChangeLink} />
+            </div>
         )
     }
+
+    let createWidgetList = (image, description) => {
+
+        console.log("list form");
+
+        return (
+            <div>
+                <label>Icon</label>
+                <input type="url" name="icon" id="icon" value={image} onChange={onChangeImage} required />
+
+                <label>Description</label>
+                <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription} required></textarea>
+            </div>
+        )
+    }
+
+    //let value = props.value;
+    const { title, value, description, image, link } = props;
+
+    console.log(props)
+
+    return (
+
+        <form>
+            <div className="container">
+                <h2>Edit widget</h2>
+
+                <label>Widget Small</label>
+                <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={onChangeWidget} />
+
+                <label>Widget</label>
+                <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
+
+                <label>List Widget</label>
+                <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
+
+                {
+                    (value === "widgetMedium" || value === "widgetSmall") 
+                        ? createWidgetForm(title, value, description, image, link)
+                        : createWidgetList(image, description)
+                }
+            </div>
+        </form>
+    )
 }
 
 export default Form;

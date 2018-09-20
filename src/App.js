@@ -76,12 +76,12 @@ class App extends Component {
     }
 
     render() {
-        const title = this.state.title;
-        const description = this.state.description;
-        const image = this.state.image;
-        const link = this.state.link;
-        const widget = this.state.widget;
-        const widgetData = this.state.widgetData;
+        let title = this.state.title;
+        let description = this.state.description;
+        let image = this.state.image;
+        let link = this.state.link;
+        let widget = this.state.widget;
+        let widgetData = this.state.widgetData;
 
         return (
             <div className="App">
