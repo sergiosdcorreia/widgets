@@ -24,7 +24,7 @@ class App extends Component {
             title: "This is the widget title",
             description: "This is the widget description",
             image: "",
-            link: "https://funeralzone-widgets.herokuapp.com/",
+            link: "",
             widgetData: [            
                 {
                     description: "This is the data description for item 1",

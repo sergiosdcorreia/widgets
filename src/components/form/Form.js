@@ -43,23 +43,23 @@ class Form extends Component {
                     <label>Widget Small</label>
                     <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={this.onChangeWidget} />
 
-                    <label>Widget Medium</label>
+                    <label>Widget</label>
                     <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={this.onChangeWidget} />
 
                     <label>List Widget</label>
                     <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={this.onChangeWidget} />
 
                     <label>Widget title</label>
-                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle} />
+                    <input type="text" name="title" id="title" value={title} onChange={this.onChangeTitle} required />
 
                     <label>Description</label>
-                    <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={this.onChangeDescription}></textarea>
+                    <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={this.onChangeDescription} required></textarea>
 
                     <label>Image</label>
-                    <input type="url" name="image" id="image" value={image} onChange={this.onChangeImage}/>
+                    <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={this.onChangeImage} required/>
 
                     <label>Link</label>
-                    <input type="url" name="link" id="link" value={link} onChange={this.onChangeLink}/>
+                    <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={this.onChangeLink} required/>
                 </div>
             </form>
         )
