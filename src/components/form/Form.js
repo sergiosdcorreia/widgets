@@ -62,13 +62,13 @@ const Form = props => {
         )
     }
 
-    const { title, value, description, image, link, widgetData } = props;
+    const { title, value, description, image, link, submit } = props;
 
     console.log(props)
 
     return (
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={submit}>
             <div className="container">
                 <h2>Edit widget</h2>
 

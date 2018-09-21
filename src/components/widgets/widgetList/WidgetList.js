@@ -15,7 +15,7 @@ const WidgetList = (props) => {
             <WidgetListItem
                 key={key}
                 itemDescription={widgetData.itemDescription} onItemDescriptionChange={this.handleItemDescriptionChange}
-                icon={widgetData.icon} onIconChange={this.handleIconChange}
+                itemIcon={widgetData.itemIcon} onIconChange={this.handleIconChange}
             />
         )
     );

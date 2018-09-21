@@ -20,6 +20,7 @@ class App extends Component {
         this.handleIconChange = this.handleIconChange.bind(this);
         this.handleLinkChange = this.handleLinkChange.bind(this);
         this.handleWidgetChange = this.handleWidgetChange.bind(this);
+        this.handleOnSubmit = this.handleOnSubmit.bind(this);
         this.state = {
             widget: "widgetSmall",
             title: "This is the widget title",
@@ -30,11 +31,11 @@ class App extends Component {
             widgetData: [
                 {
                     itemDescription: "This is the widget description 1st item",
-                    icon: "iconError"
+                    itemIcon: "iconError"
                 },
                 {
                     itemDescription: "This is the widget description 2nd item",
-                    icon: "iconLocation"
+                    itemIcon: "iconLocation"
                 }
             ]
         }
@@ -76,6 +77,19 @@ class App extends Component {
         });
     }
 
+    handleOnSubmit(e, description, icon) {
+        e.preventDefault();
+
+        const newItem = {
+                itemDescription: this.state.description,
+                itemIcon: this.state.icon
+            }
+
+        const widgetData = [...this.state.widgetData, newItem];
+
+        this.setState({widgetData})
+    }
+
     render() {
         let title = this.state.title;
         let description = this.state.description;
@@ -112,6 +126,7 @@ class App extends Component {
                     link={link} onLinkChange={this.handleLinkChange}
                     image={image} onImageChange={this.handleImageChange}
                     icon={icon} onIconChange={this.handleIconChange}
+                    submit={this.handleOnSubmit}
                 />
 
                 <Snippet

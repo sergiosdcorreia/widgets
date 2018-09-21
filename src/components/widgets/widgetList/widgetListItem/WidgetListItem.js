@@ -7,7 +7,7 @@ import IconRemove from '../../../icons/IconRemove';
 
 const WidgetListItem = (props) => {
 
-    let icon = props.icon;
+    let itemIcon = props.itemIcon;
     let itemDescription = props.itemDescription;
 
     return (
@@ -15,10 +15,10 @@ const WidgetListItem = (props) => {
             <div className="fb">
                 <div className="icon--container">
                     {
-                        icon === "iconLocation" && <Location />
+                        itemIcon === "iconLocation" && <Location />
                     }
                     {
-                        icon === "iconError" && <IconError />
+                        itemIcon === "iconError" && <IconError />
                     }
                 </div>
                 <div className="text--block">
