@@ -1,23 +1,31 @@
 import React from 'react';
 
 import './WidgetListItem.css';
+import Location from '../../../icons/Location';
+import IconError from '../../../icons/IconError';
+import IconRemove from '../../../icons/IconRemove';
 
 const WidgetListItem = (props) => {
 
+    let icon = props.icon;
+    let itemDescription = props.itemDescription;
+
     return (
         <li className="WidgetListItem">
-            <a className="link" href={props.link}>
-                <div className="fb">
-                    <div className="icon--container">
-                        <svg width="24" height="24" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z"></path>
-                        </svg>
-                    </div>
-                    <div className="text--block">
-                        <p>{props.description}</p>
-                    </div>
+            <div className="fb">
+                <div className="icon--container">
+                    {
+                        icon === "iconLocation" && <Location />
+                    }
+                    {
+                        icon === "iconError" && <IconError />
+                    }
                 </div>
-            </a>
+                <div className="text--block">
+                    <p>{itemDescription}</p>
+                </div>
+                <button><IconRemove /></button>
+            </div>
         </li>
     )
 }

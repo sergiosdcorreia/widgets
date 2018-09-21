@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Form = (props) => {
+import Location from '../icons/Location';
+import IconError from '../icons/IconError';
+
+const Form = props => {
     let onChangeTitle = (e) => {
         props.onTitleChange(e.target.value);
     }
@@ -10,6 +13,9 @@ const Form = (props) => {
     let onChangeImage = (e) => {
         props.onImageChange(e.target.value);
     }
+    let onChangeIcon = (e) => {
+        props.onIconChange(e.target.value);
+    }
     let onChangeLink = (e) => {
         props.onLinkChange(e.target.value);
     }
@@ -17,7 +23,7 @@ const Form = (props) => {
         props.onWidgetChange(e.target.value);
     }
 
-    let createWidgetForm = (title, value, description, image, link) => {
+    let createWidgetForm = ( title, description, image, link ) => {
 
         console.log("form");
 
@@ -38,29 +44,31 @@ const Form = (props) => {
         )
     }
 
-    let createWidgetList = (image, description) => {
-
-        console.log("list form");
+    let createWidgetList = (value, description) => {
 
         return (
             <div>
-                <label>Icon</label>
-                <input type="url" name="icon" id="icon" value={image} onChange={onChangeImage} required />
+                <label><Location /> Location</label>
+                <input type="radio" value="iconLocation" checked={value === "iconLocation"} onChange={onChangeIcon} />
+
+                <label><IconError /> Icon Error</label>
+                <input type="radio" value="iconError" checked={value === "iconError"} onChange={onChangeIcon} />
 
                 <label>Description</label>
-                <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription} required></textarea>
+                <textarea rows="3" cols="50" name="description" id="description" value={description} onChange={onChangeDescription} ></textarea>
+
+                <button type="submit"> Add Item </button>
             </div>
         )
     }
 
-    //let value = props.value;
-    const { title, value, description, image, link } = props;
+    const { title, value, description, image, link, widgetData } = props;
 
     console.log(props)
 
     return (
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
             <div className="container">
                 <h2>Edit widget</h2>
 
@@ -74,9 +82,11 @@ const Form = (props) => {
                 <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
 
                 {
-                    (value === "widgetMedium" || value === "widgetSmall") 
-                        ? createWidgetForm(title, value, description, image, link)
-                        : createWidgetList(image, description)
+                    (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, value, description, image, link )
+                }
+
+                {
+                    value === "listWidget" && createWidgetList(value, description)
                 }
             </div>
         </form>

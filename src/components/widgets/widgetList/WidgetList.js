@@ -3,15 +3,19 @@ import './WidgetList.css';
 
 import WidgetListItem from './widgetListItem/WidgetListItem';
 
+import Location from '../../icons/Location';
+import IconError from '../../icons/IconError';
+
 const WidgetList = (props) => {
 
-    const widgetData = props.widgetData;
-    const listWidget = widgetData.map((widgetData, key) => (
+    let description = props.description;
+    let icon = props.icon;
+    let widgetData = props.widgetData;
+    let listWidget = widgetData.map((widgetData, key) => (
             <WidgetListItem
                 key={key}
-                description={widgetData.description} onDescriptionChange={this.handleDescriptionChange}
-                link={widgetData.link} onLinkChange={this.handleLinkChange}
-                image={widgetData.image} onImageChange={this.handleImageChange}
+                itemDescription={widgetData.itemDescription} onItemDescriptionChange={this.handleItemDescriptionChange}
+                icon={widgetData.icon} onIconChange={this.handleIconChange}
             />
         )
     );
@@ -19,6 +23,22 @@ const WidgetList = (props) => {
     return (
         <div className="widgetList">
             <ul>
+                <li className="WidgetListItem">
+                    <div className="fb">
+                        <div className="icon--container">
+                            {
+                                icon === "iconLocation" && <Location />
+                            }
+                            {
+                                icon === "iconError" && <IconError />
+                            }
+                        </div>
+                        <div className="text--block">
+                            <p>{description}</p>
+                        </div>
+                    </div>
+                </li>
+                <hr />
                 {listWidget}
             </ul>
         </div>

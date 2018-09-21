@@ -17,6 +17,7 @@ class App extends Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleImageChange = this.handleImageChange.bind(this);
+        this.handleIconChange = this.handleIconChange.bind(this);
         this.handleLinkChange = this.handleLinkChange.bind(this);
         this.handleWidgetChange = this.handleWidgetChange.bind(this);
         this.state = {
@@ -25,21 +26,15 @@ class App extends Component {
             description: "This is the widget description",
             image: "",
             link: "",
-            widgetData: [            
+            icon: "iconLocation",
+            widgetData: [
                 {
-                    description: "This is the data description for item 1",
-                    link: "",
-                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
+                    itemDescription: "This is the widget description 1st item",
+                    icon: "iconError"
                 },
                 {
-                    description: "This is the data description for item 2",
-                    link: "",
-                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
-                },
-                {
-                    description: "This is the data description for item 3",
-                    link: "",
-                    image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg"
+                    itemDescription: "This is the widget description 2nd item",
+                    icon: "iconLocation"
                 }
             ]
         }
@@ -63,6 +58,12 @@ class App extends Component {
         });
     }
 
+    handleIconChange(icon) {
+        this.setState({
+            icon: icon
+        });
+    }
+
     handleLinkChange(link) {
         this.setState({
             link: link
@@ -81,6 +82,7 @@ class App extends Component {
         let image = this.state.image;
         let link = this.state.link;
         let widget = this.state.widget;
+        let icon = this.state.icon;
         let widgetData = this.state.widgetData;
 
         return (
@@ -91,19 +93,16 @@ class App extends Component {
                     <h1 className="heading-title">Widget Generator</h1>
                 </div>
 
-                { widget === "widgetSmall"
-                    ? <WidgetSmall title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
-                    : null
+                {
+                    widget === "widgetSmall" && <WidgetSmall title={title} description={description} link={link} image={image}/>
                 }
 
-                { widget === "widgetMedium"
-                    ? <WidgetMedium title={this.state.title} description={this.state.description} link={this.state.link} image={this.state.image}/>
-                    : null
+                {
+                    widget === "widgetMedium" && <WidgetMedium title={title} description={description} link={link} image={image}/>
                 }
 
-                { widget === "listWidget"
-                    ? <WidgetList widgetData={widgetData} />
-                    : null
+                {
+                    widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} /> 
                 }
 
                 <Form
@@ -112,6 +111,7 @@ class App extends Component {
                     description={description} onDescriptionChange={this.handleDescriptionChange}
                     link={link} onLinkChange={this.handleLinkChange}
                     image={image} onImageChange={this.handleImageChange}
+                    icon={icon} onIconChange={this.handleIconChange}
                 />
 
                 <Snippet
@@ -119,6 +119,7 @@ class App extends Component {
                     description={description} onDescriptionChange={this.handleDescriptionChange}
                     link={link} onLinkChange={this.handleLinkChange}
                     image={image} onImageChange={this.handleImageChange}
+                    icon={icon} onIconChange={this.handleIconChange}
                 />
 
                 <Footer />

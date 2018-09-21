@@ -5,33 +5,44 @@ li {
     font-size: 16px;
     list-style: none;
     margin-bottom: 9px;
+    padding: 9px;
+    position: relative;
 
-    a {
-        text-decoration: none;
-        display: block;
-        padding: 9px;
+    .fb {
+        display: flex;
 
-        .fb {
-            display: flex;
+        .icon--container {
+            height: 24px;
 
-            .icon--container {
+            svg {
+                fill: #1189cb;
                 height: 24px;
-
-                svg {
-                    fill: #1189cb;
-                    height: 24px;
-                }
             }
+        }
 
-            .text--block {
-                padding: 0 18px;
-                line-height: 24px;
+        .text--block {
+            padding: 0 18px;
+            line-height: 24px;
 
-                p {
-                    margin: 0;
-                    color: #515554;
-                    
-                }
+            p {
+                margin: 0;
+                color: #515554;
+                
+            }
+        }
+
+        button {
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 9px;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            &:hover svg {
+                fill: #515554;
+                transition: all 0.4s;
             }
         }
     }
