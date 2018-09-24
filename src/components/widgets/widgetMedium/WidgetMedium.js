@@ -2,7 +2,7 @@ import React from 'react';
 import ImageBlog from '../../../Assets/images/blog-img01.jpg';
 import './WidgetMedium.css';
 
-const WidgetMedium = (props) => {
+const WidgetMedium = props => {
 
     return (
         <div>

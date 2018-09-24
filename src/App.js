@@ -14,13 +14,6 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-        this.handleImageChange = this.handleImageChange.bind(this);
-        this.handleIconChange = this.handleIconChange.bind(this);
-        this.handleLinkChange = this.handleLinkChange.bind(this);
-        this.handleWidgetChange = this.handleWidgetChange.bind(this);
-        this.handleOnSubmit = this.handleOnSubmit.bind(this);
         this.state = {
             widget: "widgetSmall",
             title: "This is the widget title",
@@ -41,43 +34,43 @@ class App extends Component {
         }
     }
 
-    handleTitleChange(title) {
+    handleTitleChange = title => {
         this.setState({
             title: title
         });
     }
 
-    handleDescriptionChange(description) {
+    handleDescriptionChange = description => {
         this.setState({
             description: description
         });
     }
 
-    handleImageChange(image) {
+    handleImageChange = image => {
         this.setState({
             image: image
         });
     }
 
-    handleIconChange(icon) {
+    handleIconChange = icon => {
         this.setState({
             icon: icon
         });
     }
 
-    handleLinkChange(link) {
+    handleLinkChange = link => {
         this.setState({
             link: link
         });
     }
 
-    handleWidgetChange(widget) {
+    handleWidgetChange = widget => {
         this.setState({
             widget: widget 
         });
     }
 
-    handleOnSubmit(e, description, icon) {
+    handleOnSubmit = (e) => {
         e.preventDefault();
 
         const newItem = {

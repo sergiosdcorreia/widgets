@@ -61,4 +61,5 @@ form {
     margin: 8px 0; }
     form button:hover {
       background: #0f79b4;
-      opacity: 1; }
+      opacity: 1;
+      transition: all 1s; }

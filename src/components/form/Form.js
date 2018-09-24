@@ -82,7 +82,7 @@ const Form = props => {
                 <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
 
                 {
-                    (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, value, description, image, link )
+                    (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )
                 }
 
                 {

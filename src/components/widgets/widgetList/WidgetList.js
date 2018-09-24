@@ -6,7 +6,7 @@ import WidgetListItem from './widgetListItem/WidgetListItem';
 import Location from '../../icons/Location';
 import IconError from '../../icons/IconError';
 
-const WidgetList = (props) => {
+const WidgetList = props => {
 
     let description = props.description;
     let icon = props.icon;

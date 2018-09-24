@@ -5,7 +5,7 @@ import Location from '../../../icons/Location';
 import IconError from '../../../icons/IconError';
 import IconRemove from '../../../icons/IconRemove';
 
-const WidgetListItem = (props) => {
+const WidgetListItem = props => {
 
     let itemIcon = props.itemIcon;
     let itemDescription = props.itemDescription;
