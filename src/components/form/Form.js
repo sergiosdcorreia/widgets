@@ -4,26 +4,26 @@ import Location from '../icons/Location';
 import IconError from '../icons/IconError';
 
 const Form = props => {
-    let onChangeTitle = (e) => {
+    const onChangeTitle = (e) => {
         props.onTitleChange(e.target.value);
     }
-    let onChangeDescription = (e) => {
+    const onChangeDescription = (e) => {
         props.onDescriptionChange(e.target.value);
     }
-    let onChangeImage = (e) => {
+    const onChangeImage = (e) => {
         props.onImageChange(e.target.value);
     }
-    let onChangeIcon = (e) => {
+    const onChangeIcon = (e) => {
         props.onIconChange(e.target.value);
     }
-    let onChangeLink = (e) => {
+    const onChangeLink = (e) => {
         props.onLinkChange(e.target.value);
     }
-    let onChangeWidget = (e) => {
+    const onChangeWidget = (e) => {
         props.onWidgetChange(e.target.value);
     }
 
-    let createWidgetForm = ( title, description, image, link ) => {
+    const createWidgetForm = ( title, description, image, link ) => {
 
         console.log("form");
 

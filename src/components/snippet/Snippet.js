@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Snippet.css';
 
-const Snippet = (props) => (
+const Snippet = props => (
     <div className="snippet">
         <pre className="prettyprint">
             {

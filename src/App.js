@@ -5,10 +5,13 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Form from './components/form/Form';
 import Snippet from './components/snippet/Snippet';
+import SnippetSmall from './components/snippet/SnippetSmall';
+import SnippetWidgetList from './components/snippet/SnippetWidgetList';
 //import WidgetLarge from './components/widgets/widgetLarge/WidgetLarge';
 import WidgetMedium from './components/widgets/widgetMedium/WidgetMedium';
 import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
 import WidgetList from './components/widgets/widgetList/WidgetList';
+
 
 class App extends Component {
 
@@ -23,10 +26,12 @@ class App extends Component {
             icon: "iconLocation",
             widgetData: [
                 {
+                    id: 0,
                     itemDescription: "This is the widget description 1st item",
                     itemIcon: "iconError"
                 },
                 {
+                    id: 1,
                     itemDescription: "This is the widget description 2nd item",
                     itemIcon: "iconLocation"
                 }
@@ -71,6 +76,7 @@ class App extends Component {
     }
 
     handleOnSubmit = (e) => {
+        console.log("submit");
         e.preventDefault();
 
         const newItem = {
@@ -80,17 +86,22 @@ class App extends Component {
 
         const widgetData = [...this.state.widgetData, newItem];
 
-        this.setState({widgetData})
+        this.setState({widgetData});
+    }
+
+    onDelete = (id) => {
+        const widgetData = this.state.widgetData.filter(w => w.id !== id);
+        this.setState({widgetData});
     }
 
     render() {
-        let title = this.state.title;
-        let description = this.state.description;
-        let image = this.state.image;
-        let link = this.state.link;
-        let widget = this.state.widget;
-        let icon = this.state.icon;
-        let widgetData = this.state.widgetData;
+        const title = this.state.title;
+        const description = this.state.description;
+        const image = this.state.image;
+        const link = this.state.link;
+        const widget = this.state.widget;
+        const icon = this.state.icon;
+        const widgetData = this.state.widgetData;
 
         return (
             <div className="App">
@@ -109,7 +120,7 @@ class App extends Component {
                 }
 
                 {
-                    widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} /> 
+                    widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} /> 
                 }
 
                 <Form
@@ -122,13 +133,27 @@ class App extends Component {
                     submit={this.handleOnSubmit}
                 />
 
-                <Snippet
-                    title={title} onTitleChange={this.handleTitleChange}
-                    description={description} onDescriptionChange={this.handleDescriptionChange}
-                    link={link} onLinkChange={this.handleLinkChange}
-                    image={image} onImageChange={this.handleImageChange}
-                    icon={icon} onIconChange={this.handleIconChange}
-                />
+                {
+                    widget === "widgetSmall" && <SnippetSmall
+                        title={title} onTitleChange={this.handleTitleChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
+                        link={link} onLinkChange={this.handleLinkChange}
+                        image={image} onImageChange={this.handleImageChange}
+                    />
+                }
+
+                {
+                    widget === "widgetMedium" && <Snippet
+                        title={title} onTitleChange={this.handleTitleChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
+                        link={link} onLinkChange={this.handleLinkChange}
+                        image={image} onImageChange={this.handleImageChange}
+                    />
+                }
+
+                {
+                    widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
+                }
 
                 <Footer />
             </div>

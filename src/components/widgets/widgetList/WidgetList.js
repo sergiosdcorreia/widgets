@@ -8,14 +8,16 @@ import IconError from '../../icons/IconError';
 
 const WidgetList = props => {
 
-    let description = props.description;
-    let icon = props.icon;
-    let widgetData = props.widgetData;
-    let listWidget = widgetData.map((widgetData, key) => (
+    const description = props.description;
+    const icon = props.icon;
+    const widgetData = props.widgetData;
+    const onDelete = props.onDelete;
+    const listWidget = widgetData.map((widgetData, id) => (
             <WidgetListItem
-                key={key}
+                key={id}
                 itemDescription={widgetData.itemDescription} onItemDescriptionChange={this.handleItemDescriptionChange}
                 itemIcon={widgetData.itemIcon} onIconChange={this.handleIconChange}
+                onDelete={onDelete}
             />
         )
     );
