@@ -76,7 +76,6 @@ class App extends Component {
     }
 
     handleOnSubmit = (e) => {
-        console.log("submit");
         e.preventDefault();
 
         const newItem = {
@@ -89,8 +88,12 @@ class App extends Component {
         this.setState({widgetData});
     }
 
-    onDelete = (id) => {
-        const widgetData = this.state.widgetData.filter(w => w.id !== id);
+    onDelete = (e) => {
+
+        console.log("delete");
+        const widgetData = [...this.state.widgetData];
+        const index = widgetData.indexOf(e.target.value)
+        widgetData.splice(index, 1);
         this.setState({widgetData});
     }
 
