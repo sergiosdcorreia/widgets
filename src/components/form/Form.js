@@ -23,6 +23,8 @@ const Form = props => {
         props.onWidgetChange(e.target.value);
     }
 
+    const icon = props.icon;
+
     const createWidgetForm = ( title, description, image, link ) => {
 
         console.log("form");
@@ -44,15 +46,17 @@ const Form = props => {
         )
     }
 
-    let createWidgetList = (value, description) => {
+    const createWidgetList = (icon, description) => {
+
+
 
         return (
             <div>
                 <label><Location /> Location</label>
-                <input type="radio" value="iconLocation" checked={value === "iconLocation"} onChange={onChangeIcon} />
+                <input type="radio" value="iconLocation" checked={icon === "iconLocation"} onChange={onChangeIcon} />
 
                 <label><IconError /> Icon Error</label>
-                <input type="radio" value="iconError" checked={value === "iconError"} onChange={onChangeIcon} />
+                <input type="radio" value="iconError" checked={icon === "iconError"} onChange={onChangeIcon} />
 
                 <label>Description</label>
                 <textarea rows="3" cols="50" name="description" id="description" value={description} onChange={onChangeDescription} ></textarea>
@@ -86,7 +90,7 @@ const Form = props => {
                 }
 
                 {
-                    value === "listWidget" && createWidgetList(value, description)
+                    value === "listWidget" && createWidgetList(icon, description)
                 }
             </div>
         </form>
