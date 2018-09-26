@@ -33,15 +33,48 @@ form {
         color: $color-black;
     }
 
+    .label-icon {
+        display: inline-block;
+    }
+
     h2 {
         margin-top: 0;
         color: $color-black;  
+    }
+
+    .icons-container {
+        background: #f4f4f4;
+        border-radius: 3px;
+        padding: 8px;
+    }
+
+    .icon-bg {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        text-align: center;
+    }
+
+    .icon-selected {
+        svg {
+            fill: #1189cb;
+        }
     }
 
     input {
         border-radius: 3px;
         border-color: $color-primary--blue;
         padding: 4px;
+    }
+
+    input[type="radio"].select-icon {
+        opacity: 0;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
     }
 
     textarea {

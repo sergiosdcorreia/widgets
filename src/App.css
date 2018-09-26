@@ -235,13 +235,34 @@ form {
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     color: #515554; }
+  form .label-icon {
+    display: inline-block; }
   form h2 {
     margin-top: 0;
     color: #515554; }
+  form .icons-container {
+    background: #f4f4f4;
+    border-radius: 3px;
+    padding: 8px; }
+  form .icon-bg {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    text-align: center; }
+  form .icon-selected svg {
+    fill: #1189cb; }
   form input {
     border-radius: 3px;
     border-color: #1189cb;
     padding: 4px; }
+  form input[type="radio"].select-icon {
+    opacity: 0;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0; }
   form textarea {
     border-radius: 3px;
     border-color: #1189cb;
