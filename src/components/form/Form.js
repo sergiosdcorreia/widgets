@@ -28,8 +28,9 @@ const Form = props => {
     const createWidgetForm = ( title, description, image, link ) => {
 
         return (
-            <div>
-                <label>Widget title</label>
+            <div className="block">
+                <h2>Card</h2>
+                <label>Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
 
                 <label>Description</label>
@@ -47,7 +48,8 @@ const Form = props => {
     const createWidgetList = (icon, description) => {
 
         return (
-            <div>
+            <div className="block">
+                <h2>List</h2>
                 <p>Icons</p>
                 <div className="icons-container">
                     <div className="icon-bg">
@@ -74,16 +76,17 @@ const Form = props => {
 
         <form onSubmit={submit}>
             <div className="container">
-                <h2>Edit widget</h2>
+                {/* <label>Widget Small</label>
+                <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={onChangeWidget} /> */}
 
-                <label>Widget Small</label>
-                <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={onChangeWidget} />
-
-                <label>Widget</label>
-                <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
-
-                <label>List Widget</label>
-                <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
+                <div className="select-widget">
+                    <label>Card</label>
+                    <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
+                </div>
+                <div className="select-widget">
+                    <label>List</label>
+                    <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
+                </div>
 
                 {
                     (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )

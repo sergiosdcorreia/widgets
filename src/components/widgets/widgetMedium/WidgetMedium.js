@@ -14,9 +14,9 @@ const WidgetMedium = props => {
                     </div>
                     <img src={ImageBlog} alt={props.title} />
                 </div>
-                <div className="card__actions">
+                {/* <div className="card__actions">
                     <a href="">Read More</a>
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            widget: "widgetSmall",
+            widget: "widgetMedium",
             title: "This is the widget title",
             description: "This is the widget description",
             image: "",
@@ -114,9 +114,9 @@ class App extends Component {
                     <h1 className="heading-title">Widget Generator</h1>
                 </div>
 
-                {
+                {/* {
                     widget === "widgetSmall" && <WidgetSmall title={title} description={description} link={link} image={image}/>
-                }
+                } */}
 
                 {
                     widget === "widgetMedium" && <WidgetMedium title={title} description={description} link={link} image={image}/>
@@ -136,14 +136,14 @@ class App extends Component {
                     submit={this.handleOnSubmit}
                 />
 
-                {
+                {/* {
                     widget === "widgetSmall" && <SnippetSmall
                         title={title} onTitleChange={this.handleTitleChange}
                         description={description} onDescriptionChange={this.handleDescriptionChange}
                         link={link} onLinkChange={this.handleLinkChange}
                         image={image} onImageChange={this.handleImageChange}
                     />
-                }
+                } */}
 
                 {
                     widget === "widgetMedium" && <Snippet

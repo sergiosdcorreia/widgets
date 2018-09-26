@@ -212,7 +212,7 @@
         color: #0D699C; }
 
 form {
-  padding: 8px;
+  padding: 16px 8px;
   margin: 32px auto;
   border: 1px solid #515554;
   border-left: 6px solid #515554;
@@ -227,6 +227,12 @@ form {
       padding: 0.5em 1em; }
       form .widget-selector li label {
         padding: 0.25em; }
+  form .block {
+    margin-top: 16px; }
+  form .select-widget {
+    display: inline-block;
+    margin-right: 32px;
+    text-align: center; }
   form label {
     display: block;
     font-size: 16px;
