@@ -26,16 +26,16 @@ const Form = props => {
 
         return (
             <div className="block">
-                <label>Title</label>
+                <label for="title">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
 
-                <label>Description</label>
+                <label for="description">Description</label>
                 <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription}></textarea>
 
-                <label>Image</label>
+                <label for="image">Image</label>
                 <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={onChangeImage} />
 
-                <label>Link</label>
+                <label for="link">Link</label>
                 <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={onChangeLink} />
             </div>
         )

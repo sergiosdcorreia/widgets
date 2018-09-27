@@ -20,22 +20,22 @@ class App extends Component {
         super(props);
         this.state = {
             widget: "widgetMedium",
-            title: "This is the widget title",
-            description: "This is the widget description",
-            image: "",
+            title: "Title",
+            description: "Description",
+            image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg",
             link: "",
             icon: "iconLocation",
             widgetData: [
-                {
-                    id: 0,
-                    itemDescription: "This is the widget description 1st item",
-                    itemIcon: "iconError"
-                },
-                {
-                    id: 1,
-                    itemDescription: "This is the widget description 2nd item",
-                    itemIcon: "iconLocation"
-                }
+                // {
+                //     id: 0,
+                //     itemDescription: "This is the widget description 1st item",
+                //     itemIcon: "iconError"
+                // },
+                // {
+                //     id: 1,
+                //     itemDescription: "This is the widget description 2nd item",
+                //     itemIcon: "iconLocation"
+                // }
             ]
         }
     }
@@ -126,6 +126,46 @@ class App extends Component {
                 <div className="flex container">
 
                     <div className="col">
+                    
+                    <Form
+                        value={widget} onWidgetChange={this.handleWidgetChange}
+                        title={title} onTitleChange={this.handleTitleChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
+                        link={link} onLinkChange={this.handleLinkChange}
+                        image={image} onImageChange={this.handleImageChange}
+                        icon={icon} onIconChange={this.handleIconChange}
+                        submit={this.handleOnSubmit}
+                    />
+
+                    <h4>Embed the code</h4>
+                    <p className="text">Copy and paste the code</p>
+
+                    {/* {
+                        widget === "widgetSmall" && <SnippetSmall
+                            title={title} onTitleChange={this.handleTitleChange}
+                            description={description} onDescriptionChange={this.handleDescriptionChange}
+                            link={link} onLinkChange={this.handleLinkChange}
+                            image={image} onImageChange={this.handleImageChange}
+                        />
+                    } */}
+
+                    {
+                        widget === "widgetMedium" && <Snippet
+                            title={title} onTitleChange={this.handleTitleChange}
+                            description={description} onDescriptionChange={this.handleDescriptionChange}
+                            link={link} onLinkChange={this.handleLinkChange}
+                            image={image} onImageChange={this.handleImageChange}
+                        />
+                    }
+
+                    {
+                        widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
+                    }
+                
+                </div>
+
+
+                    <div className="col">
 
                         {/* {
                             widget === "widgetSmall" && <WidgetSmall title={title} description={description} link={link} image={image}/>
@@ -139,42 +179,6 @@ class App extends Component {
                             widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} /> 
                         }
 
-                    </div>
-
-                    <div className="col">
-                
-                        <Form
-                            value={widget} onWidgetChange={this.handleWidgetChange}
-                            title={title} onTitleChange={this.handleTitleChange}
-                            description={description} onDescriptionChange={this.handleDescriptionChange}
-                            link={link} onLinkChange={this.handleLinkChange}
-                            image={image} onImageChange={this.handleImageChange}
-                            icon={icon} onIconChange={this.handleIconChange}
-                            submit={this.handleOnSubmit}
-                        />
-
-                        {/* {
-                            widget === "widgetSmall" && <SnippetSmall
-                                title={title} onTitleChange={this.handleTitleChange}
-                                description={description} onDescriptionChange={this.handleDescriptionChange}
-                                link={link} onLinkChange={this.handleLinkChange}
-                                image={image} onImageChange={this.handleImageChange}
-                            />
-                        } */}
-
-                        {
-                            widget === "widgetMedium" && <Snippet
-                                title={title} onTitleChange={this.handleTitleChange}
-                                description={description} onDescriptionChange={this.handleDescriptionChange}
-                                link={link} onLinkChange={this.handleLinkChange}
-                                image={image} onImageChange={this.handleImageChange}
-                            />
-                        }
-
-                        {
-                            widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
-                        }
-                    
                     </div>
 
                 </div>

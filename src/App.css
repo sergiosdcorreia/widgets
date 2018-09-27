@@ -213,11 +213,7 @@
 
 form {
   padding: 16px 8px;
-  margin: 32px auto;
-  border: 1px solid #515554;
-  border-left: 6px solid #515554;
-  border-radius: 6px;
-  width: 500px;
+  width: 600px;
   max-width: 100%; }
   form .widget-selector {
     margin: 0;
@@ -255,23 +251,24 @@ form {
   form .icon-selected svg {
     fill: #1189cb; }
   form input {
-    border-radius: 3px;
-    border-color: #1189cb;
-    padding: 4px; }
+    border: none;
+    border-bottom: 1px solid #cfd2d2;
+    width: 100%;
+    height: 32px; }
   form input[type="radio"].select-icon {
     opacity: 0;
     position: absolute;
     width: 50px;
     height: 50px;
     top: 0;
-    left: 0; }
+    left: 0;
+    cursor: pointer; }
   form textarea {
-    border-radius: 3px;
-    border-color: #1189cb;
-    padding: 4px; }
+    border: none;
+    border-bottom: 1px solid #cfd2d2;
+    width: 100%; }
   form input[name="description"], form input[name="image"], form input[name="link"] {
-    color: #515554;
-    width: 50%; }
+    color: #515554; }
   form button {
     display: block;
     background: #1189cb;
@@ -315,7 +312,8 @@ form {
   margin: 0 auto; }
 
 .App {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased; }
 
 .container {
   width: 1300px;
@@ -331,3 +329,24 @@ form {
 
 .col {
   width: 50%; }
+
+h4 {
+  font-weight: 600;
+  font-size: 17.4px;
+  color: #515554;
+  line-height: 27.0667px;
+  margin: 0;
+  margin-top: 16px; }
+
+.text {
+  margin: 0;
+  color: #515554;
+  font-size: 14.4923px;
+  font-weight: 300;
+  line-height: 23.2px; }
+
+@media only screen and (max-width: 991px) {
+  .flex {
+    display: block; }
+  .col {
+    width: 100%; } }

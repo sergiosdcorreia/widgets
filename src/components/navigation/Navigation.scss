@@ -1,10 +1,43 @@
 .navigation {
+    background: #0d699c;
+    padding: 0 16px;
+    border-bottom: 2px solid #1189cb;
+
+    .container {
+        position: relative;
+    }
+}
+
+.nav-selected {
     background: #1189cb;
-    padding: 16px;
+    border-right: 2px solid transparent;
 }
 
 .select-widget {
     display: inline-block;
-    margin-right: 32px;
     text-align: center;
+    height: 51px;
+    width: 100px;
+    border-right: 2px solid #1189cb;
+    
+    .input-card {
+        position: absolute;
+        cursor: pointer;
+        margin: 0;
+        opacity: 0;
+        height: 51px;
+        top: 0;
+        left: 0;
+        width: 100px;
+    }
+
+    .input-list {
+        @extend .input-card;
+        left: 104px;
+    }
+
+    label {
+        color: #fff;
+        line-height: 51px;
+    }
 }

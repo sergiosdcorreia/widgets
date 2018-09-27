@@ -2,11 +2,7 @@
 
 form {
     padding: 16px 8px;
-    margin: 32px auto;
-    border: 1px solid $color-black;
-    border-left: 6px solid $color-black;
-    border-radius: 6px;
-    width: 500px;
+    width: 600px;
     max-width: 100%;
 
     .widget-selector {
@@ -67,9 +63,10 @@ form {
     }
 
     input {
-        border-radius: 3px;
-        border-color: $color-primary--blue;
-        padding: 4px;
+        border: none;
+        border-bottom: 1px solid #cfd2d2;
+        width: 100%;
+        height: 32px;
     }
 
     input[type="radio"].select-icon {
@@ -79,17 +76,17 @@ form {
         height: 50px;
         top: 0;
         left: 0;
+        cursor: pointer;
     }
 
     textarea {
-        border-radius: 3px;
-        border-color: $color-primary--blue;
-        padding: 4px;
+        border: none;
+        border-bottom: 1px solid #cfd2d2;
+        width: 100%;
     }
 
     input[name="description"], input[name="image"], input[name="link"] {
         color: $color-black;  
-        width: 50%;
     }
 
     button {
@@ -123,12 +120,3 @@ form {
         }
     }
 }
-
-
-
-
-
-
-
-
-

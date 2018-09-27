@@ -15,14 +15,14 @@ const Navigation = props => {
             <div className="container">
                 {/* <label>Widget Small</label>
                 <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={onChangeWidget} /> */}
-        
-                <div className="select-widget">
+                
+                <div className={`select-widget ${value === "widgetMedium" ? "nav-selected" : null}`}>
                     <label>Card</label>
-                    <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
+                    <input className="input-card" type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
                 </div>
-                <div className="select-widget">
+                <div className={`select-widget ${value === "listWidget" ? "nav-selected" : null}`}>
                     <label>List</label>
-                    <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
+                    <input className="input-list" type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
                 </div>
             </div>
         </div>
