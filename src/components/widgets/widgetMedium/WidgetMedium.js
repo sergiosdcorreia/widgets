@@ -4,8 +4,8 @@ import './WidgetMedium.css';
 const WidgetMedium = props => {
 
     return (
-        <div>
-            <div className="widget">
+        <div className="widget">
+            <div className="widget-container">
                 <div className="img--container">
                     <div className="text--block">
                         <p className="title">{props.title}</p>

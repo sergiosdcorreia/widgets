@@ -74,7 +74,6 @@ const Form = props => {
                 {
                     (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )
                 }
-
                 {
                     value === "listWidget" && createWidgetList(icon, description)
                 }

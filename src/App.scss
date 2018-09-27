@@ -13,6 +13,7 @@
 
 .heading-title {
   color: $color-black;
+  margin: 16px 8px;
 }
 
 .flex {
@@ -31,6 +32,7 @@ h4 {
   line-height: 27.0667px;
   margin: 0;
   margin-top: 16px;
+  margin-left: 8px;
 }
 
 .text {
@@ -39,13 +41,14 @@ h4 {
   font-size: 14.4923px;
   font-weight: 300;
   line-height: 23.2px;
+  margin-left: 8px;
 }
 
 @media only screen and (max-width: 991px) {
   .flex {
-    display: block;
+    flex-direction: column-reverse;
   }
-  
+
   .col {
     width: 100%;
   }

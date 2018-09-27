@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SnippetSmall.css';
+import './Snippet.css';
 
 const SnippetSmall = props => (
     <div className="snippet">

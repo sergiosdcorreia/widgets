@@ -3,15 +3,14 @@
 .snippet {
 
     background: $color-off--white;
-    padding: 1em;
-    max-width: 500px;
-    margin: 0 auto;
+    width: auto;
     overflow: hidden;
     overflow-x: scroll;
+    margin: 8px;
     
     .prettyprint {
         color: $color-black;
-        
+        padding: 16px;
     }
 }
 

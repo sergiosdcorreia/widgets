@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SnippetWidgetList.css';
+import './Snippet.css';
 
 const SnippetWidgetList = props => {
 
