@@ -19,9 +19,6 @@ const Form = props => {
     const onChangeLink = (e) => {
         props.onLinkChange(e.target.value);
     }
-    const onChangeWidget = (e) => {
-        props.onWidgetChange(e.target.value);
-    }
 
     const icon = props.icon;
 
@@ -29,7 +26,6 @@ const Form = props => {
 
         return (
             <div className="block">
-                <h2>Card</h2>
                 <label>Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
 
@@ -49,7 +45,6 @@ const Form = props => {
 
         return (
             <div className="block">
-                <h2>List</h2>
                 <p>Icons</p>
                 <div className="icons-container">
                     <div className="icon-bg">
@@ -76,18 +71,6 @@ const Form = props => {
 
         <form onSubmit={submit}>
             <div className="container">
-                {/* <label>Widget Small</label>
-                <input type="radio" value="widgetSmall" checked={value === "widgetSmall"} onChange={onChangeWidget} /> */}
-
-                <div className="select-widget">
-                    <label>Card</label>
-                    <input type="radio" value="widgetMedium" checked={value === "widgetMedium"} onChange={onChangeWidget} />
-                </div>
-                <div className="select-widget">
-                    <label>List</label>
-                    <input type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
-                </div>
-
                 {
                     (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )
                 }

@@ -5,7 +5,7 @@
 }
 
 .container {
-  width: 960px;
+  width: 1300px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -13,3 +13,13 @@
 .heading-title {
   color: $color-black;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  width: 50%;
+}
+

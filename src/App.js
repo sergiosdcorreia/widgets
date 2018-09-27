@@ -3,13 +3,14 @@ import './App.css';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import Navigation from './components/navigation/Navigation';
 import Form from './components/form/Form';
 import Snippet from './components/snippet/Snippet';
-import SnippetSmall from './components/snippet/SnippetSmall';
+//import SnippetSmall from './components/snippet/SnippetSmall';
 import SnippetWidgetList from './components/snippet/SnippetWidgetList';
 //import WidgetLarge from './components/widgets/widgetLarge/WidgetLarge';
 import WidgetMedium from './components/widgets/widgetMedium/WidgetMedium';
-import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
+//import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
 import WidgetList from './components/widgets/widgetList/WidgetList';
 
 
@@ -89,8 +90,6 @@ class App extends Component {
     }
 
     onDelete = (e) => {
-
-        console.log("delete");
         const widgetData = [...this.state.widgetData];
         const index = widgetData.indexOf(e.target.value)
         widgetData.splice(index, 1);
@@ -110,53 +109,75 @@ class App extends Component {
             <div className="App">
                 <Header />
 
+                <Navigation value={widget} onWidgetChange={this.handleWidgetChange}/>
+
                 <div className="container">
-                    <h1 className="heading-title">Widget Generator</h1>
+                    <h1 className="heading-title">
+                    {
+                        widget === "widgetMedium" && <span>Create Card</span>
+                    }
+
+                    {
+                        widget === "listWidget" && <span>Create List</span>
+                    }
+                    </h1>
                 </div>
 
-                {/* {
-                    widget === "widgetSmall" && <WidgetSmall title={title} description={description} link={link} image={image}/>
-                } */}
+                <div className="flex container">
 
-                {
-                    widget === "widgetMedium" && <WidgetMedium title={title} description={description} link={link} image={image}/>
-                }
+                    <div className="col">
 
-                {
-                    widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} /> 
-                }
+                        {/* {
+                            widget === "widgetSmall" && <WidgetSmall title={title} description={description} link={link} image={image}/>
+                        } */}
 
-                <Form
-                    value={widget} onWidgetChange={this.handleWidgetChange}
-                    title={title} onTitleChange={this.handleTitleChange}
-                    description={description} onDescriptionChange={this.handleDescriptionChange}
-                    link={link} onLinkChange={this.handleLinkChange}
-                    image={image} onImageChange={this.handleImageChange}
-                    icon={icon} onIconChange={this.handleIconChange}
-                    submit={this.handleOnSubmit}
-                />
+                        {
+                            widget === "widgetMedium" && <WidgetMedium title={title} description={description} link={link} image={image}/>
+                        }
 
-                {/* {
-                    widget === "widgetSmall" && <SnippetSmall
-                        title={title} onTitleChange={this.handleTitleChange}
-                        description={description} onDescriptionChange={this.handleDescriptionChange}
-                        link={link} onLinkChange={this.handleLinkChange}
-                        image={image} onImageChange={this.handleImageChange}
-                    />
-                } */}
+                        {
+                            widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} /> 
+                        }
 
-                {
-                    widget === "widgetMedium" && <Snippet
-                        title={title} onTitleChange={this.handleTitleChange}
-                        description={description} onDescriptionChange={this.handleDescriptionChange}
-                        link={link} onLinkChange={this.handleLinkChange}
-                        image={image} onImageChange={this.handleImageChange}
-                    />
-                }
+                    </div>
 
-                {
-                    widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
-                }
+                    <div className="col">
+                
+                        <Form
+                            value={widget} onWidgetChange={this.handleWidgetChange}
+                            title={title} onTitleChange={this.handleTitleChange}
+                            description={description} onDescriptionChange={this.handleDescriptionChange}
+                            link={link} onLinkChange={this.handleLinkChange}
+                            image={image} onImageChange={this.handleImageChange}
+                            icon={icon} onIconChange={this.handleIconChange}
+                            submit={this.handleOnSubmit}
+                        />
+
+                        {/* {
+                            widget === "widgetSmall" && <SnippetSmall
+                                title={title} onTitleChange={this.handleTitleChange}
+                                description={description} onDescriptionChange={this.handleDescriptionChange}
+                                link={link} onLinkChange={this.handleLinkChange}
+                                image={image} onImageChange={this.handleImageChange}
+                            />
+                        } */}
+
+                        {
+                            widget === "widgetMedium" && <Snippet
+                                title={title} onTitleChange={this.handleTitleChange}
+                                description={description} onDescriptionChange={this.handleDescriptionChange}
+                                link={link} onLinkChange={this.handleLinkChange}
+                                image={image} onImageChange={this.handleImageChange}
+                            />
+                        }
+
+                        {
+                            widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
+                        }
+                    
+                    </div>
+
+                </div>
 
                 <Footer />
             </div>
