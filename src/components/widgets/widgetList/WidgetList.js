@@ -10,6 +10,7 @@ const WidgetList = props => {
 
     const description = props.description;
     const icon = props.icon;
+    const message=props.message;
     const widgetData = props.widgetData;
     const onDelete = props.onDelete;
     const listWidget = widgetData.map((widgetData, id) => (
@@ -41,7 +42,7 @@ const WidgetList = props => {
                     </div>
                 </li>
                 <hr />
-                {listWidget}
+                {widgetData.length === 0 ? <p className="messageList">{message}</p> : listWidget}
             </ul>
         </div>
     )

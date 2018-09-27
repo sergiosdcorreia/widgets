@@ -25,6 +25,7 @@ class App extends Component {
             image: "https://d24pb0tc2lc7uj.cloudfront.net/iaYdoRdOcDqtKGWFpyTBUyNyPd4=/fit-in/700x0/uploads/public/587/4b2/889/5874b28891302071879692.jpg",
             link: "",
             icon: "iconLocation",
+            listMessage: "No items on your list",
             widgetData: [
                 // {
                 //     id: 0,
@@ -37,7 +38,9 @@ class App extends Component {
                 //     itemIcon: "iconLocation"
                 // }
             ]
+
         }
+        console.log(this.state);
     }
 
     handleTitleChange = title => {
@@ -89,11 +92,11 @@ class App extends Component {
         this.setState({widgetData});
     }
 
-    onDelete = (e) => {
-        const widgetData = [...this.state.widgetData];
-        const index = widgetData.indexOf(e.target.value)
+    onDelete = (index, e) => {
+        const widgetData = Object.assign([], this.state.widgetData);
+        index = widgetData.indexOf(e)
         widgetData.splice(index, 1);
-        this.setState({widgetData});
+        this.setState({widgetData:widgetData});
     }
 
     render() {
@@ -104,6 +107,7 @@ class App extends Component {
         const widget = this.state.widget;
         const icon = this.state.icon;
         const widgetData = this.state.widgetData;
+        const listMessage = this.state.listMessage;
 
         return (
             <div className="App">
@@ -176,7 +180,7 @@ class App extends Component {
                         }
 
                         {
-                            widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} /> 
+                            widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} message={listMessage} /> 
                         }
 
                     </div>
