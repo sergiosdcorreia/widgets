@@ -16,6 +16,7 @@ const WidgetList = props => {
     const listWidget = widgetData.map((widgetData, id) => (
             <WidgetListItem
                 key={id}
+                index={id}
                 itemDescription={widgetData.itemDescription} onItemDescriptionChange={this.handleItemDescriptionChange}
                 itemIcon={widgetData.itemIcon} onIconChange={this.handleIconChange}
                 onDelete={onDelete}

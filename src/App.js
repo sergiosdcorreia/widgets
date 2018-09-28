@@ -40,7 +40,6 @@ class App extends Component {
             ]
 
         }
-        console.log(this.state);
     }
 
     handleTitleChange = title => {
@@ -89,14 +88,16 @@ class App extends Component {
 
         const widgetData = [...this.state.widgetData, newItem];
 
-        this.setState({widgetData});
+        this.setState({widgetData, description: "Description", icon: "iconLocation"});
     }
 
-    onDelete = (index, e) => {
+    onDelete = (index) => {
         const widgetData = Object.assign([], this.state.widgetData);
-        index = widgetData.indexOf(e)
+
         widgetData.splice(index, 1);
-        this.setState({widgetData:widgetData});
+        this.setState({
+            widgetData:widgetData
+        });
     }
 
     render() {

@@ -7,9 +7,11 @@ import IconRemove from '../../../icons/IconRemove';
 
 const WidgetListItem = props => {
 
-    const itemIcon = props.itemIcon;
-    const itemDescription = props.itemDescription;
-    const onDelete = props.onDelete;
+    const { itemIcon, itemDescription, onDelete, index } = props;
+
+    const remove = () => {
+        onDelete(index)
+    }
 
     return (
         <li className="WidgetListItem">
@@ -25,7 +27,7 @@ const WidgetListItem = props => {
                 <div className="text--block">
                     <p>{itemDescription}</p>
                 </div>
-                <button type="button" onClick={onDelete}><IconRemove /></button>
+                <button type="button" onClick={remove}><IconRemove /></button>
             </div>
         </li>
     )
