@@ -28,12 +28,10 @@ class App extends Component {
             listMessage: "No items on your list",
             widgetData: [
                 // {
-                //     id: 0,
                 //     itemDescription: "This is the widget description 1st item",
                 //     itemIcon: "iconError"
                 // },
                 // {
-                //     id: 1,
                 //     itemDescription: "This is the widget description 2nd item",
                 //     itemIcon: "iconLocation"
                 // }
@@ -88,7 +86,7 @@ class App extends Component {
 
         const widgetData = [...this.state.widgetData, newItem];
 
-        this.setState({widgetData, description: "Description", icon: "iconLocation"});
+        this.setState({widgetData, description: "", icon: "iconLocation"});
     }
 
     onDelete = (index) => {

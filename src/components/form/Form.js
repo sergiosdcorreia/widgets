@@ -58,7 +58,7 @@ const Form = props => {
                 </div>
 
                 <label>Description</label>
-                <textarea rows="3" cols="50" name="description" id="description" value={description} onChange={onChangeDescription} ></textarea>
+                <textarea rows="3" cols="50" name="description" id="description" placeholder="Add a description" value={description} onChange={onChangeDescription} ></textarea>
 
                 <button type="submit"> Add Item </button>
             </div>
