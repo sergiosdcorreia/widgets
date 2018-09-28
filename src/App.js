@@ -8,10 +8,12 @@ import Form from './components/form/Form';
 import Snippet from './components/snippet/Snippet';
 //import SnippetSmall from './components/snippet/SnippetSmall';
 import SnippetWidgetList from './components/snippet/SnippetWidgetList';
+import SnippetUserNotification from './components/snippet/SnippetUserNotification';
 //import WidgetLarge from './components/widgets/widgetLarge/WidgetLarge';
 import WidgetMedium from './components/widgets/widgetMedium/WidgetMedium';
 //import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
 import WidgetList from './components/widgets/widgetList/WidgetList';
+import WidgetUserNotification from './components/widgets/widgetUserNotification/WidgetUserNotification';
 
 
 class App extends Component {
@@ -123,6 +125,10 @@ class App extends Component {
                     {
                         widget === "listWidget" && <span>Create List</span>
                     }
+
+                    {
+                        widget === "widgetUserNotification" && <span>Create Notification</span>
+                    }
                     </h1>
                 </div>
 
@@ -164,6 +170,15 @@ class App extends Component {
                     {
                         widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
                     }
+
+                                        {
+                        widget === "widgetUserNotification" && <SnippetUserNotification
+                            title={title} onTitleChange={this.handleTitleChange}
+                            description={description} onDescriptionChange={this.handleDescriptionChange}
+                            link={link} onLinkChange={this.handleLinkChange}
+                            image={image} onImageChange={this.handleImageChange}
+                        />
+                    }
                 
                 </div>
 
@@ -180,6 +195,10 @@ class App extends Component {
 
                         {
                             widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} message={listMessage} /> 
+                        }
+
+                        {
+                            widget === "widgetUserNotification" && <WidgetUserNotification title={title} description={description} image={image}/>
                         }
 
                     </div>

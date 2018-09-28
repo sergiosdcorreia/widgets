@@ -24,6 +24,10 @@ const Navigation = props => {
                     <label>List</label>
                     <input className="input-list" type="radio" value="listWidget" checked={value === "listWidget"} onChange={onChangeWidget} />
                 </div>
+                <div className={`select-widget-notification ${value === "widgetUserNotification" ? "nav-selected" : null}`}>
+                    <label>User Notification</label>
+                    <input className="input-user-notification" type="radio" value="widgetUserNotification" checked={value === "widgetUserNotification"} onChange={onChangeWidget} />
+                </div>
             </div>
         </div>
     )

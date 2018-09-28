@@ -9,7 +9,7 @@ const SnippetUserNotification = props => (
 `<div class="user-notification-message">
     <div class="media">
         <div class="media__left">
-            <img src="${props.image}" />
+            <img style="width:180px" src="${props.image}" />
         </div>
         <div class="media__body">
             <h2 class="long-primer kirk">${props.title}</h2>

@@ -77,6 +77,9 @@ const Form = props => {
                 {
                     value === "listWidget" && createWidgetList(icon, description)
                 }
+                {
+                    value === "widgetUserNotification" && createWidgetForm( title, description, image, link )
+                }
             </div>
         </form>
     )
