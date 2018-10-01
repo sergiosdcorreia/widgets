@@ -20,9 +20,19 @@ const Form = props => {
         props.onLinkChange(e.target.value);
     }
 
-    const icon = props.icon;
+    const { title, icon, value, description, image, submit } = props;
 
-    const createWidgetForm = ( title, description, image, link ) => {
+    const createWidgetForm = ( title, description, image ) => {
+
+        const widgetHasLink = props.value;
+        const link = props.link;
+
+        const hasLink = link => (
+                <div>
+                    <label>Link</label>
+                    <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={onChangeLink} />
+                </div>
+            )
 
         return (
             <div className="block">
@@ -35,13 +45,14 @@ const Form = props => {
                 <label>Image</label>
                 <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={onChangeImage} />
 
-                <label>Link</label>
-                <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={onChangeLink} />
+                {
+                    widgetHasLink === "widgetMedium" && hasLink( link )
+                }
             </div>
         )
     }
 
-    const createWidgetList = (icon, description) => {
+    const createWidgetList = ( icon, description ) => {
 
         return (
             <div className="block">
@@ -65,17 +76,18 @@ const Form = props => {
         )
     }
 
-    const { title, value, description, image, link, submit } = props;
-
     return (
 
         <form onSubmit={submit}>
             <div className="container">
                 {
-                    (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )
+                    value === "widgetMedium" && createWidgetForm( title, description, image )
                 }
                 {
-                    value === "listWidget" && createWidgetList(icon, description)
+                    value === "listWidget" && createWidgetList( icon, description )
+                }
+                {
+                    value === "widgetUserNotification" && createWidgetForm( title, description, image )
                 }
             </div>
         </form>

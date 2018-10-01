@@ -29,3 +29,22 @@
   .select-widget label {
     color: #fff;
     line-height: 51px; }
+
+.select-widget-notification {
+  display: inline-block;
+  text-align: center;
+  height: 51px;
+  width: 200px;
+  border-right: 2px solid #1189cb; }
+  .select-widget-notification .input-user-notification {
+    position: absolute;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    height: 51px;
+    top: 0;
+    left: 208px;
+    width: 400px; }
+  .select-widget-notification label {
+    color: #fff;
+    line-height: 51px; }

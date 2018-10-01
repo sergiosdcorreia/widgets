@@ -8,10 +8,12 @@ import Form from './components/form/Form';
 import Snippet from './components/snippet/Snippet';
 //import SnippetSmall from './components/snippet/SnippetSmall';
 import SnippetWidgetList from './components/snippet/SnippetWidgetList';
+import SnippetUserNotification from './components/snippet/SnippetUserNotification';
 //import WidgetLarge from './components/widgets/widgetLarge/WidgetLarge';
 import WidgetMedium from './components/widgets/widgetMedium/WidgetMedium';
 //import WidgetSmall from './components/widgets/widgetSmall/WidgetSmall';
 import WidgetList from './components/widgets/widgetList/WidgetList';
+import WidgetUserNotification from './components/widgets/widgetUserNotification/WidgetUserNotification';
 
 
 class App extends Component {
@@ -123,22 +125,47 @@ class App extends Component {
                     {
                         widget === "listWidget" && <span>Create List</span>
                     }
+
+                    {
+                        widget === "widgetUserNotification" && <span>Create Notification</span>
+                    }
                     </h1>
                 </div>
 
                 <div className="flex container">
 
                     <div className="col">
-                    
-                    <Form
+
+                    {
+                        widget === "widgetMedium" &&  <Form
                         value={widget} onWidgetChange={this.handleWidgetChange}
                         title={title} onTitleChange={this.handleTitleChange}
                         description={description} onDescriptionChange={this.handleDescriptionChange}
                         link={link} onLinkChange={this.handleLinkChange}
                         image={image} onImageChange={this.handleImageChange}
+                        hasLink={true}
+                    />
+                    }
+
+                    {
+                        widget === "listWidget" && <Form
+                        value={widget} onWidgetChange={this.handleWidgetChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
                         icon={icon} onIconChange={this.handleIconChange}
                         submit={this.handleOnSubmit}
+                        hasLink={false}
                     />
+                    }
+
+                    {
+                        widget === "widgetUserNotification" && <Form
+                        value={widget} onWidgetChange={this.handleWidgetChange}
+                        title={title} onTitleChange={this.handleTitleChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
+                        image={image} onImageChange={this.handleImageChange}
+                        hasLink={false}
+                    />
+                    }
 
                     <h4>Embed the code</h4>
                     <p className="text">Copy and paste the code</p>
@@ -164,6 +191,15 @@ class App extends Component {
                     {
                         widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
                     }
+
+                                        {
+                        widget === "widgetUserNotification" && <SnippetUserNotification
+                            title={title} onTitleChange={this.handleTitleChange}
+                            description={description} onDescriptionChange={this.handleDescriptionChange}
+                            link={link} onLinkChange={this.handleLinkChange}
+                            image={image} onImageChange={this.handleImageChange}
+                        />
+                    }
                 
                 </div>
 
@@ -180,6 +216,10 @@ class App extends Component {
 
                         {
                             widget === "listWidget" && <WidgetList widgetData={widgetData} description={description} icon={icon} onDelete={this.onDelete} message={listMessage} /> 
+                        }
+
+                        {
+                            widget === "widgetUserNotification" && <WidgetUserNotification title={title} description={description} image={image}/>
                         }
 
                     </div>
