@@ -1,3 +1,7 @@
+Checkout this project live at (https://funeralzone-widgets.herokuapp.com/)
+
+This is a tool to generate snippet code for widgets to be used by non-technical staff at Funeral Zone Ltd.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
