@@ -41,7 +41,23 @@ const Form = props => {
         )
     }
 
-    const createWidgetList = (icon, description) => {
+    const createUserNotificationForm = ( title, description, image ) => {
+
+        return (
+            <div className="block">
+                <label>Title</label>
+                <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
+
+                <label>Description</label>
+                <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription}></textarea>
+
+                <label>Image</label>
+                <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={onChangeImage} />
+            </div>
+        )
+    }
+
+    const createWidgetList = ( icon, description ) => {
 
         return (
             <div className="block">
@@ -72,13 +88,13 @@ const Form = props => {
         <form onSubmit={submit}>
             <div className="container">
                 {
-                    (value === "widgetMedium" || value === "widgetSmall") && createWidgetForm( title, description, image, link )
+                    value === "widgetMedium" && createWidgetForm( title, description, image, link )
                 }
                 {
-                    value === "listWidget" && createWidgetList(icon, description)
+                    value === "listWidget" && createWidgetList( icon, description )
                 }
                 {
-                    value === "widgetUserNotification" && createWidgetForm( title, description, image, link )
+                    value === "widgetUserNotification" && createUserNotificationForm( title, description, image )
                 }
             </div>
         </form>

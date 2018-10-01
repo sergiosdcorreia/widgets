@@ -135,16 +135,37 @@ class App extends Component {
                 <div className="flex container">
 
                     <div className="col">
-                    
-                    <Form
+
+                    {
+                        widget === "widgetMedium" &&  <Form
                         value={widget} onWidgetChange={this.handleWidgetChange}
                         title={title} onTitleChange={this.handleTitleChange}
                         description={description} onDescriptionChange={this.handleDescriptionChange}
                         link={link} onLinkChange={this.handleLinkChange}
                         image={image} onImageChange={this.handleImageChange}
+                        hasLink={true}
+                    />
+                    }
+
+                    {
+                        widget === "listWidget" && <Form
+                        value={widget} onWidgetChange={this.handleWidgetChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
                         icon={icon} onIconChange={this.handleIconChange}
                         submit={this.handleOnSubmit}
+                        hasLink={false}
                     />
+                    }
+
+                    {
+                        widget === "widgetUserNotification" && <Form
+                        value={widget} onWidgetChange={this.handleWidgetChange}
+                        title={title} onTitleChange={this.handleTitleChange}
+                        description={description} onDescriptionChange={this.handleDescriptionChange}
+                        image={image} onImageChange={this.handleImageChange}
+                        hasLink={false}
+                    />
+                    }
 
                     <h4>Embed the code</h4>
                     <p className="text">Copy and paste the code</p>
