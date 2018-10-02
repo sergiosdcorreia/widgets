@@ -11,7 +11,7 @@
       justify-content: flex-start; }
       .widget-user-notification .widget-container .flex-notification .img--container {
         margin-right: 18.225px;
-        width: 180px; }
+        max-width: 180px; }
         .widget-user-notification .widget-container .flex-notification .img--container img {
           width: 180px; }
       .widget-user-notification .widget-container .flex-notification .text--block {
