@@ -317,7 +317,9 @@ form {
   .snippet .hidden {
     width: 0;
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    position: absolute;
+    left: -100px; }
 
 .container {
   max-width: 960px;
@@ -359,6 +361,34 @@ h4 {
   font-weight: 300;
   line-height: 23.2px;
   margin-left: 8px; }
+
+button {
+  display: block;
+  background: #1189cb;
+  color: #f6fbfe;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: all 1s;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1em;
+  padding: 0.5625em 1.125em;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  margin: 8px; }
+  button:hover {
+    background: #0f79b4;
+    opacity: 1;
+    transition: all 1s; }
 
 @media only screen and (max-width: 991px) {
   .flex {

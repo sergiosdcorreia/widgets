@@ -10,4 +10,6 @@
   .snippet .hidden {
     width: 0;
     height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    position: absolute;
+    left: -100px; }

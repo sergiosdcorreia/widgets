@@ -4,6 +4,8 @@ import './Snippet.css';
 
 const SnippetWidgetList = props => {
 
+    const { onCopyToClipboard, widgetData, copyRef } = props;
+
     const iconLocationCode = 
     `
             <svg width="24" height="24" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
@@ -17,8 +19,9 @@ const SnippetWidgetList = props => {
             </svg>
 `;
 
+
     const snippetWidget = () => {
-        return (props.widgetData.map((widget) => (
+        return (widgetData.map((widget) => (
         `
     <li class="0-list__item o-list__item--article">
         <div class="o-list-item__icon">
@@ -30,20 +33,27 @@ const SnippetWidgetList = props => {
         </div>
     </li>
         `
+        )
     )
-)
 )}
 
+    const widgetListSnippetToCopy = 
+    `<ul class="o-list o-list--article">
+        ${snippetWidget().join(" ")}
+    </ul>`
+
     return (
-    <div className="snippet">
-        <pre className="prettyprint">
-            {
-`<ul class="o-list o-list--article">
-    ${snippetWidget().join(" ")}
-</ul>`
-            }
-        </pre>
-    </div>
-)}
+        <div>
+            <h4>Embed the code</h4>
+            <button onClick={onCopyToClipboard}>Copy to clipboard</button>
+            <div className="snippet">
+                <pre className="prettyprint">
+                <textarea className="hidden" ref={copyRef} name="widgetSnippet" id="widgetSnippet" value={widgetListSnippetToCopy} readOnly ></textarea>
+                    {widgetListSnippetToCopy}
+                </pre>
+            </div>
+        </div>
+    )
+}
 
 export default SnippetWidgetList;

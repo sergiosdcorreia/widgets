@@ -39,7 +39,7 @@ class App extends Component {
                 // }
             ]
 
-        },
+        }
         this.copyRef = React.createRef();
     }
 
@@ -108,14 +108,8 @@ class App extends Component {
     }
 
     render() {
-        const title = this.state.title;
-        const description = this.state.description;
-        const image = this.state.image;
-        const link = this.state.link;
-        const widget = this.state.widget;
-        const icon = this.state.icon;
-        const widgetData = this.state.widgetData;
-        const listMessage = this.state.listMessage;
+
+        const { title, description, image, link, widget, icon, widgetData, listMessage } = this.state;
 
         return (
             <div className="App">
@@ -174,10 +168,6 @@ class App extends Component {
                     />
                     }
 
-                    <h4>Embed the code</h4>
-                    <p className="text">Copy and paste the code</p>
-                    <button onClick={this.onCopyToClipboard}>Copy to clipboard</button>
-
                     {/* {
                         widget === "widgetSmall" && <SnippetSmall
                             title={title} onTitleChange={this.handleTitleChange}
@@ -194,11 +184,16 @@ class App extends Component {
                             link={link} onLinkChange={this.handleLinkChange}
                             image={image} onImageChange={this.handleImageChange}
                             copyRef={this.copyRef}
+                            onCopyToClipboard={this.onCopyToClipboard}
                         />
                     }
 
                     {
-                        widget === "listWidget" && <SnippetWidgetList widgetData={widgetData} />
+                        widget === "listWidget" && <SnippetWidgetList 
+                            widgetData={widgetData}
+                            copyRef={this.copyRef}
+                            onCopyToClipboard={this.onCopyToClipboard}
+                        />
                     }
 
                                         {
@@ -207,6 +202,8 @@ class App extends Component {
                             description={description} onDescriptionChange={this.handleDescriptionChange}
                             link={link} onLinkChange={this.handleLinkChange}
                             image={image} onImageChange={this.handleImageChange}
+                            copyRef={this.copyRef}
+                            onCopyToClipboard={this.onCopyToClipboard}
                         />
                     }
                 

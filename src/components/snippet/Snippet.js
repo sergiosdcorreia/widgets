@@ -19,13 +19,17 @@ const Snippet = props => {
 </a>`;
 
     return (
-    <div className="snippet">
-        <pre className="prettyprint">
-            <textarea className="hidden" ref={copyRef} name="widgetSnippet" id="widgetSnippet" value={widgetSnippetToCopy}></textarea>
-            {widgetSnippetToCopy}
-        </pre>
-    </div>
-)
+        <div>
+            <h4>Embed the code</h4>
+            <button onClick={onCopyToClipboard}>Copy to clipboard</button>
+            <div className="snippet">
+                <pre className="prettyprint">
+                    <textarea className="hidden" ref={copyRef} name="widgetSnippet" id="widgetSnippet" value={widgetSnippetToCopy} readOnly ></textarea>
+                    {widgetSnippetToCopy}
+                </pre>
+            </div>
+        </div>
+    )
 }
 
 export default Snippet;
