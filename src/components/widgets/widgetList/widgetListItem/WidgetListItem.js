@@ -27,7 +27,7 @@ const WidgetListItem = props => {
                 <div className="text--block">
                     <p>{itemDescription}</p>
                 </div>
-                <button type="button" onClick={remove}><IconRemove /></button>
+                <button className="btn-remove" type="button" onClick={remove}><IconRemove /></button>
             </div>
         </li>
     )

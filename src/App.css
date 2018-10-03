@@ -362,7 +362,7 @@ h4 {
   line-height: 23.2px;
   margin-left: 8px; }
 
-button {
+.btn-blue {
   display: block;
   background: #1189cb;
   color: #f6fbfe;
@@ -385,7 +385,7 @@ button {
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
   margin: 8px; }
-  button:hover {
+  .btn-blue:hover {
     background: #0f79b4;
     opacity: 1;
     transition: all 1s; }
