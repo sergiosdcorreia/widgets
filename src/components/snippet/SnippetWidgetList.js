@@ -23,7 +23,7 @@ const SnippetWidgetList = props => {
     const snippetWidget = () => {
         return (widgetData.map((widget) => (
         `
-    <li class="0-list__item o-list__item--article">
+    <li class="o-list__item o-list__item--article">
         <div class="o-list-item__icon">
             ${widget.itemIcon === "iconLocation" ? iconLocationCode : ""}
             ${widget.itemIcon === "iconError" ? iconErrorCode : ""}

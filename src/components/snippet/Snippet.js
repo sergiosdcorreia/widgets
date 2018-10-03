@@ -8,13 +8,12 @@ const Snippet = props => {
 
     const widgetSnippetToCopy = 
 `<a class="c-card c-card--link block" href="${link}">
-    <div class="c-card__media c-card__media--16-9"> 
-        <img scr="${image}">
-        </div>
+    <div class="c-card__media c-card__media--16-9">
         <div class="c-card__primary-title">
-            <div class="c-card__primary-title">${title}</div>
+            <div class="c-card__primary-text">${title}</div>
             <div class="c-card__subhead-text">${description}</div>
         </div>
+        <img src="${image}">
     </div>
 </a>`;
 
