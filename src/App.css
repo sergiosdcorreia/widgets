@@ -314,6 +314,10 @@ form {
   .snippet .prettyprint {
     color: #515554;
     padding: 16px; }
+  .snippet .hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden; }
 
 .container {
   max-width: 960px;

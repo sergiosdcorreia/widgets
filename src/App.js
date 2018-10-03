@@ -39,7 +39,8 @@ class App extends Component {
                 // }
             ]
 
-        }
+        },
+        this.copyRef = React.createRef();
     }
 
     handleTitleChange = title => {
@@ -98,6 +99,12 @@ class App extends Component {
         this.setState({
             widgetData:widgetData
         });
+    }
+
+    onCopyToClipboard = (e) => {
+        this.copyRef.current.select();
+        document.execCommand('copy');
+        e.target.focus();
     }
 
     render() {
@@ -169,6 +176,7 @@ class App extends Component {
 
                     <h4>Embed the code</h4>
                     <p className="text">Copy and paste the code</p>
+                    <button onClick={this.onCopyToClipboard}>Copy to clipboard</button>
 
                     {/* {
                         widget === "widgetSmall" && <SnippetSmall
@@ -185,6 +193,7 @@ class App extends Component {
                             description={description} onDescriptionChange={this.handleDescriptionChange}
                             link={link} onLinkChange={this.handleLinkChange}
                             image={image} onImageChange={this.handleImageChange}
+                            copyRef={this.copyRef}
                         />
                     }
 
