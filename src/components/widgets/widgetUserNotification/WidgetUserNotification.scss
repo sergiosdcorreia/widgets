@@ -1,6 +1,6 @@
 .widget-user-notification {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 16px;
     border: 1px solid silver;
     border-radius: 6px;
     background: #fff;
@@ -44,5 +44,11 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .widget-user-notification {
+        margin: 16px auto;
     }
 }

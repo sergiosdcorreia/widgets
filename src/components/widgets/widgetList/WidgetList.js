@@ -26,6 +26,7 @@ const WidgetList = props => {
 
     return (
         <div className="widgetList">
+            <h4>Preview</h4>
             <ul>
                 <li className="WidgetListItem">
                     <div className="fb">

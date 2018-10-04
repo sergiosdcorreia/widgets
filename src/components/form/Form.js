@@ -56,7 +56,7 @@ const Form = props => {
 
         return (
             <div className="block">
-                <p>Icons</p>
+                <h4>Icons</h4>
                 <div className="icons-container">
                     <div className="icon-bg">
                         <label className={`label-icon ${icon === "iconLocation" ? "icon-selected" : null}`}><Location /></label>

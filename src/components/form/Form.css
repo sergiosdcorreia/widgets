@@ -11,6 +11,9 @@ form {
         padding: 0.25em; }
   form .block {
     margin-top: 16px; }
+    form .block h4 {
+      margin-left: 0;
+      margin-bottom: .5em; }
   form label {
     display: block;
     font-size: 16px;
