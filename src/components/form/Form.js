@@ -29,20 +29,20 @@ const Form = props => {
 
         const hasLink = link => (
                 <div>
-                    <label>Link</label>
+                    <label className="label">Link</label>
                     <input type="url" name="link" id="link" placeholder="Link URL" value={link} onChange={onChangeLink} />
                 </div>
             )
 
         return (
             <div className="block">
-                <label>Title</label>
+                <label className="label">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={onChangeTitle} />
 
-                <label>Description</label>
+                <label className="label">Description</label>
                 <textarea rows="3" cols="50" name="description" id="description" placeholder="This is the article description" value={description} onChange={onChangeDescription}></textarea>
 
-                <label>Image</label>
+                <label className="label">Image</label>
                 <input type="url" name="image" placeholder="Image URL" id="image" value={image} onChange={onChangeImage} />
 
                 {
@@ -68,7 +68,7 @@ const Form = props => {
                     </div>
                 </div>
 
-                <label>Description</label>
+                <label className="label">Description</label>
                 <textarea rows="3" cols="50" name="description" id="description" placeholder="Add a description" value={description} onChange={onChangeDescription} ></textarea>
 
                 <button type="submit"> Add Item </button>
