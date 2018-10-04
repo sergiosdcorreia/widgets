@@ -38,9 +38,9 @@ const SnippetWidgetList = props => {
 )}
 
     const widgetListSnippetToCopy = 
-    `<ul class="o-list o-list--article">
-        ${snippetWidget().join(" ")}
-    </ul>`
+`<ul class="o-list o-list--article">
+    ${snippetWidget().join(" ")}
+</ul>`
 
     return (
         <div>

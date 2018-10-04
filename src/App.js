@@ -90,7 +90,7 @@ class App extends Component {
 
         const widgetData = [...this.state.widgetData, newItem];
 
-        this.setState({widgetData, description: "", icon: "iconLocation"});
+        this.setState({widgetData, description: ""});
     }
 
     onDelete = (index) => {
