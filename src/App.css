@@ -244,10 +244,12 @@ form {
     display: block;
     font-size: 16px;
     line-height: 26px;
+    height: 32px;
     margin-top: 8px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
-    color: #515554; }
+    color: #515554;
+    padding-bottom: 8px; }
   form .label-icon {
     display: inline-block; }
   form h2 {
@@ -259,12 +261,23 @@ form {
     padding: 8px; }
   form .icon-bg {
     display: inline-block;
-    width: 50px;
+    width: 30px;
     height: 50px;
     position: relative;
-    text-align: center; }
-  form .icon-selected svg {
-    fill: #1189cb; }
+    text-align: center;
+    margin-right: 8px; }
+  form .icon-selected {
+    position: relative; }
+    form .icon-selected svg {
+      fill: #1189cb; }
+    form .icon-selected:before {
+      width: 30px;
+      height: 3px;
+      background-color: #1189cb;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0; }
   form input {
     border: none;
     border-bottom: 1px solid #cfd2d2;
@@ -273,7 +286,7 @@ form {
   form input[type="radio"].select-icon {
     opacity: 0;
     position: absolute;
-    width: 50px;
+    width: 30px;
     height: 50px;
     top: 0;
     left: 0;
@@ -328,6 +341,55 @@ form {
     position: absolute;
     left: -100px; }
 
+.alert {
+  display: inline-block;
+  margin-left: 16px;
+  line-height: 40px;
+  color: red;
+  -webkit-animation: fadeout 3s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 3s;
+  /* Firefox < 16 */
+  -ms-animation: fadeout 3s;
+  /* Internet Explorer */
+  -o-animation: fadeout 3s;
+  /* Opera < 12.1 */
+  animation: fadeout 3s; }
+
+@keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
 .container {
   max-width: 960px;
   margin: 0 auto; }
@@ -370,7 +432,7 @@ h4 {
   margin-left: 8px; }
 
 .btn-blue {
-  display: block;
+  display: inline-block;
   background: #1189cb;
   color: #f6fbfe;
   cursor: pointer;

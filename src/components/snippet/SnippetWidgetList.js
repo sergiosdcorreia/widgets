@@ -4,7 +4,7 @@ import './Snippet.css';
 
 const SnippetWidgetList = props => {
 
-    const { onCopyToClipboard, widgetData, copyRef } = props;
+    const { onCopyToClipboard, widgetData, copyRef, isCopied } = props;
 
     const iconLocationCode = 
     `
@@ -45,7 +45,7 @@ const SnippetWidgetList = props => {
     return (
         <div>
             <h4>Embed the code</h4>
-            <button className="btn-blue" onClick={onCopyToClipboard}>Copy to clipboard</button>
+            <button className="btn-blue" onClick={onCopyToClipboard}>Copy to clipboard</button>{ isCopied && <span className="alert">Copied!</span> }
             <div className="snippet">
                 <pre className="prettyprint">
                 <textarea className="hidden" ref={copyRef} name="widgetSnippet" id="widgetSnippet" value={widgetListSnippetToCopy} readOnly ></textarea>

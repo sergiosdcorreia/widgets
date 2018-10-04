@@ -23,3 +23,45 @@
         left: -100px;
     }
 }
+
+.alert {
+    display: inline-block;
+    margin-left: 16px;
+    line-height: 40px;
+    color: red;
+
+    -webkit-animation: fadeout 3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeout 3s; /* Firefox < 16 */
+     -ms-animation: fadeout 3s; /* Internet Explorer */
+      -o-animation: fadeout 3s; /* Opera < 12.1 */
+         animation: fadeout 3s;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

@@ -28,6 +28,7 @@ class App extends Component {
             link: "",
             icon: "iconLocation",
             listMessage: "No items on your list",
+            isCoppied: false,
             widgetData: [
                 // {
                 //     itemDescription: "This is the widget description 1st item",
@@ -105,11 +106,19 @@ class App extends Component {
         this.copyRef.current.select();
         document.execCommand('copy');
         e.target.focus();
+
+        this.setState({
+            isCopied: true
+        })
+
+        setTimeout(() => {
+        this.setState({isCopied: false});
+        }, 3000)
     }
 
     render() {
 
-        const { title, description, image, link, widget, icon, widgetData, listMessage } = this.state;
+        const { title, description, image, link, widget, icon, widgetData, listMessage, isCopied } = this.state;
 
         return (
             <div className="App">
@@ -185,6 +194,7 @@ class App extends Component {
                             image={image} onImageChange={this.handleImageChange}
                             copyRef={this.copyRef}
                             onCopyToClipboard={this.onCopyToClipboard}
+                            isCopied={isCopied}
                         />
                     }
 
@@ -193,6 +203,7 @@ class App extends Component {
                             widgetData={widgetData}
                             copyRef={this.copyRef}
                             onCopyToClipboard={this.onCopyToClipboard}
+                            isCopied={isCopied}
                         />
                     }
 
@@ -204,6 +215,7 @@ class App extends Component {
                             image={image} onImageChange={this.handleImageChange}
                             copyRef={this.copyRef}
                             onCopyToClipboard={this.onCopyToClipboard}
+                            isCopied={isCopied}
                         />
                     }
                 

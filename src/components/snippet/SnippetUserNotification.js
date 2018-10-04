@@ -4,7 +4,7 @@ import './Snippet.css';
 
 const SnippetUserNotification = props => {
 
-    const { image, title, description, onCopyToClipboard, copyRef } = props;
+    const { image, title, description, onCopyToClipboard, copyRef, isCopied } = props;
 
     const userNotificationSnippetToCopy =
 `<div class="user-notification-message">
@@ -31,7 +31,7 @@ const SnippetUserNotification = props => {
     return (
         <div>
             <h4>Embed the code</h4>
-            <button className="btn-blue" onClick={onCopyToClipboard}>Copy to clipboard</button>
+            <button className="btn-blue" onClick={onCopyToClipboard}>Copy to clipboard</button>{ isCopied && <span className="alert">Copied!</span> }
             <div className="snippet">
                 <pre className="prettyprint">
                     <textarea className="hidden" ref={copyRef} name="widgetSnippet" id="widgetSnippet" value={userNotificationSnippetToCopy} readOnly ></textarea>
