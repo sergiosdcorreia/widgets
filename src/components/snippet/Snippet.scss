@@ -32,9 +32,9 @@
 
     -webkit-animation: fadeout 3s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadeout 3s; /* Firefox < 16 */
-     -ms-animation: fadeout 3s; /* Internet Explorer */
-      -o-animation: fadeout 3s; /* Opera < 12.1 */
-         animation: fadeout 3s;
+    -ms-animation: fadeout 3s; /* Internet Explorer */
+    -o-animation: fadeout 3s; /* Opera < 12.1 */
+    animation: fadeout 3s;
 }
 
 @keyframes fadeout {
